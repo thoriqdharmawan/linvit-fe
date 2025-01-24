@@ -7,15 +7,33 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.pinyon-script-regular {
+  font-family: "Pinyon Script", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.castoro-regular {
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.castoro-regular-italic {
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: italic;
 }
