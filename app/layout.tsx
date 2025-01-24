@@ -14,10 +14,12 @@ const geistMono = Geist_Mono({
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
+  subsets: ["latin"],
 });
 
 const castoro = Castoro({
   weight: "400",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
