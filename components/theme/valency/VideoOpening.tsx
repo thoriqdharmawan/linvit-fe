@@ -1,4 +1,6 @@
-export default function VideoOpening() {
+import { Wedding } from "@/interfaces";
+
+export default function VideoOpening({ data }: { data: Wedding }) {
   return (
     <div className="h-full w-full flex relative justify-center items-center">
       <video autoPlay muted loop className="object-cover h-full w-full">
@@ -6,23 +8,24 @@ export default function VideoOpening() {
         Your browser does not support the video tag.
       </video>
 
-      <div className="absolute opacity-0 animate-fadeIn text-center px-20">
+      {/* <div className="absolute opacity-0 animate-fadeIn text-center px-20"> */}
+      <div className="absolute opacity-1 text-center px-20">
         <p className="castoro-regular mb-8 text-[#3e3e3e]">THE WEDDING OF</p>
 
         <div className="gap-3 flex flex-col">
           <h2 className="text-4xl font-semibold castoro-regular text-[#c0985d]">
-            Thoriq
+            {data.groom_nickname}
           </h2>
           <p className="text-4xl font-semibold pinyon-script-regular text-[#3e3e3e]">
             and
           </p>
           <h2 className="text-4xl font-semibold castoro-regular text-[#c0985d]">
-            Nisa
+            {data.bride_nickname}
           </h2>
         </div>
 
         <p className="castoro-regular text-base mt-8 text-[#3e3e3e]">
-          05 . 05 . 25
+          {data.wedding_date}
         </p>
       </div>
     </div>

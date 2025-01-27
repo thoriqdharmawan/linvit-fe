@@ -1,6 +1,7 @@
+import { Wedding } from "@/interfaces";
 import Image from "next/image";
 
-export default function WeddingDate() {
+export default function WeddingDate({ data }: { data: Wedding }) {
   return (
     <div className="flex flex-col gap-4 px-6 py-12 text-center items-center">
       <Image
@@ -13,12 +14,7 @@ export default function WeddingDate() {
 
       <h1 className="text-3xl font-semibold">Our Journey</h1>
 
-      <p>
-        And of His signs is that He created for you from yourselves mates that
-        you may find tranquility in them, and He placed between you affection
-        and mercy. Indeed in that are signs for a people who give thought. (Q.S
-        Ar-Rum: 21)
-      </p>
+      <p>{data.our_journey}</p>
     </div>
   );
 }
