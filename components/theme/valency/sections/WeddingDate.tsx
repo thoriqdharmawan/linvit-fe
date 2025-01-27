@@ -20,7 +20,7 @@ export default function WeddingDate({ data }: { data: Wedding }) {
       <div className="rounded-t-full border-2 border-primary shadow-2xl shadow-primary bg-[#c0985d34] bg-opacity-20 ">
         <div className="pt-9 pb-2 px-7 flex flex-col items-center">
           <Image
-            src="https://picsum.photos/300/400"
+            src="https://picsum.photos/id/255/200/300"
             height={300}
             width={200}
             alt="date"
