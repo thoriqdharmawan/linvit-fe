@@ -3,6 +3,7 @@ import VideoOpening from "./VideoOpening";
 import WeddingDate from "./WeddingDate";
 import GroomBridge from "./GroomBride";
 import { useWeddingContext } from "@/providers/WeddingProvider";
+import "./style.css";
 
 export default function Valency() {
   const { data } = useWeddingContext();
