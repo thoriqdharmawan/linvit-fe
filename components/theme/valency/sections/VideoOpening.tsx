@@ -8,8 +8,7 @@ export default function VideoOpening({ data }: { data: Wedding }) {
         Your browser does not support the video tag.
       </video>
 
-      {/* <div className="absolute opacity-0 animate-fadeIn text-center px-20"> */}
-      <div className="absolute opacity-1 text-center px-20">
+      <div className="absolute opacity-0 animate-fadeIn text-center px-20">
         <p className="castoro-regular mb-8 text-body">THE WEDDING OF</p>
 
         <div className="gap-3 flex flex-col">

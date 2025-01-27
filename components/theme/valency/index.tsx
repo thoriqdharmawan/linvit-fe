@@ -1,9 +1,9 @@
-import DekstopImage from "@/components/theme/valency/DekstopImage";
-import VideoOpening from "./VideoOpening";
-import WeddingDate from "./WeddingDate";
-import GroomBridge from "./GroomBride";
+import DekstopImage from "@/components/theme/valency/sections/DekstopImage";
+import VideoOpening from "./sections/VideoOpening";
+import WeddingDate from "./sections/WeddingDate";
+import GroomBridge from "./sections/GroomBride";
 import { useWeddingContext } from "@/providers/WeddingProvider";
-import "./style.css";
+import "./styles/index.css";
 
 export default function Valency() {
   const { data } = useWeddingContext();
@@ -17,9 +17,7 @@ export default function Valency() {
         {data && (
           <div className="w-full h-dvh overflow-y-auto">
             <VideoOpening data={data} />
-
             <WeddingDate data={data} />
-
             <GroomBridge data={data} />
           </div>
         )}
