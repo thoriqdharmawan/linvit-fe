@@ -1,7 +1,5 @@
 import { Wedding } from "@/interfaces";
 import Image from "next/image";
-import WeddingDateBtm from "@/components/theme/valency/assets/wedding-date-bottom.webp";
-import WeddingDateBg from "@/components/theme/valency/assets/wedding-date-bg.webp";
 
 const DateItem = ({ amount, label }: { amount: number, label: string }) => {
   return (
@@ -38,14 +36,15 @@ export default function WeddingDate({ data }: { data: Wedding }) {
         </div>
 
         <Image
-          src={WeddingDateBtm}
+          src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/section.webp"
           height={320}
+          width={420}
           alt="btm-img"
         />
       </div>
 
       <Image
-        src={WeddingDateBg}
+        src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/bg-pink.webp"
         fill
         alt="bg"
         className="object-cover absolute -z-10"

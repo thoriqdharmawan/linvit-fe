@@ -5,6 +5,7 @@ import GroomBridge from "./sections/GroomBride";
 import { useWeddingContext } from "@/providers/WeddingProvider";
 import "./styles/index.css";
 import Image from "next/image";
+import Akad from "./sections/Akad";
 
 export default function Valency() {
   const { data } = useWeddingContext();
@@ -20,7 +21,7 @@ export default function Valency() {
             <VideoOpening data={data} />
             <WeddingDate data={data} />
             <GroomBridge data={data} />
-
+            <Akad />
           </div>
         )}
 
