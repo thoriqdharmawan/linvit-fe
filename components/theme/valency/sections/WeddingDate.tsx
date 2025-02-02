@@ -12,11 +12,9 @@ const DateItem = ({ amount, label }: { amount: number, label: string }) => {
   )
 }
 
-// https://i.ibb.co.com/WVM4H2g/wedding-date-bg.webp
-
 export default function WeddingDate({ data }: { data: Wedding }) {
   return (
-    <div className="flex flex-col gap-4 px-10 py-12 text-center relative overflow-clip">
+    <div className="flex flex-col gap-4 px-6 py-12 text-center relative overflow-clip">
       <div className="rounded-t-full border-2 border-primary shadow-2xl shadow-primary bg-[#c0985d34] bg-opacity-20 ">
         <div className="pt-9 pb-2 px-7 flex flex-col items-center">
           <Image
