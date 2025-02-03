@@ -6,6 +6,7 @@ import { useWeddingContext } from "@/providers/WeddingProvider";
 import "./styles/index.css";
 import Image from "next/image";
 import Akad from "./sections/Akad";
+import PhotoHightlight from "./sections/PhotoHightlight";
 
 export default function Valency() {
   const { data } = useWeddingContext();
@@ -21,11 +22,12 @@ export default function Valency() {
             <VideoOpening data={data} />
             <WeddingDate data={data} />
             <GroomBridge data={data} />
-            <Akad />
+            <PhotoHightlight data={data} />
+            <Akad data={data} />
           </div>
         )}
 
-        <Image src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/bg-gif.gif" className="-z-20 object-cover" fill alt="bg" />
+        <Image src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/bg-gif.gif" unoptimized className="-z-20 object-cover" fill alt="bg" />
       </div>
     </div>
   );
