@@ -2,12 +2,12 @@ import Image from "next/image"
 import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
 import { useWeddingContext } from "@/providers/WeddingProvider"
 import GroomBridge from "./sections/GroomBride"
+import OurMoments from "./sections/OurMoments"
 import PhotoHightlight from "./sections/PhotoHightlight"
 import VideoOpening from "./sections/VideoOpening"
 import WeddingDate from "./sections/WeddingDate"
 import WeddingEvent from "./sections/WeddingEvent"
 import "./styles/index.css"
-import OurMoments from "./sections/OurMoments"
 
 export default function Valency() {
   const { data } = useWeddingContext()
@@ -25,7 +25,7 @@ export default function Valency() {
             <GroomBridge data={data} />
             <PhotoHightlight data={data} />
             <WeddingEvent data={data} />
-            <OurMoments />
+            <OurMoments data={data} />
           </div>
         )}
 

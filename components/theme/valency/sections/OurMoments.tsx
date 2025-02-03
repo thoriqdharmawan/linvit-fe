@@ -1,40 +1,8 @@
+import type { Wedding } from "@/interfaces";
 import Image from "next/image";
 import { ImageGallery } from "react-image-grid-gallery";
 
-const imagesArray = [
-  {
-    id: "1",
-    alt: "text 1",
-    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
-  },
-  {
-    id: "2",
-    alt: "Image2's alt text",
-    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/f5V7ssSC088njEOM3pNTlA7CCevO9feeDk0b4ERw.jpg",
-  },
-  {
-    id: "3",
-    alt: "Image3's alt text",
-    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
-  },
-  {
-    id: "11",
-    alt: "text 1",
-    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/SpGkEttKFmtG0NyEY4rdELTMrXZX5oH8cbEiuevT.jpg",
-  },
-  {
-    id: "21",
-    alt: "Image2's alt text",
-    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
-  },
-  {
-    id: "31",
-    alt: "Image3's alt text",
-    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
-  },
-];
-
-export default function OurMoments() {
+export default function OurMoments({ data }: { data: Wedding }) {
   return (
     <div className="py-10 flex flex-col gap-12">
       <div className="w-full overflow-hidden flex justify-center items-center">
@@ -52,7 +20,7 @@ export default function OurMoments() {
         <h2 className="castoro-regular mb-12 text-center text-3xl font-semibold text-body">Our Moments</h2>
 
         <ImageGallery
-          imagesInfoArray={imagesArray}
+          imagesInfoArray={data?.photos?.map((p) => ({ id: p.id, src: p.url, alt: p.name || '' })) || []}
           columnCount={2}
           columnWidth={160}
           gapSize={8}
