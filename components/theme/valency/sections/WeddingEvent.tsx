@@ -72,7 +72,7 @@ const Card = (props: Props) => {
   )
 }
 
-export default function Akad({ data }: { data: Wedding }) {
+export default function WeddingEvent({ data }: { data: Wedding }) {
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-4 py-20 text-center">
       <div className="mb-8">
