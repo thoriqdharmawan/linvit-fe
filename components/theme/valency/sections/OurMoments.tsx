@@ -36,7 +36,7 @@ const imagesArray = [
 
 export default function OurMoments() {
   return (
-    <div className="py-20 flex flex-col gap-12">
+    <div className="py-10 flex flex-col gap-12">
       <div className="w-full overflow-hidden flex justify-center items-center">
         <iframe
           width="412"
