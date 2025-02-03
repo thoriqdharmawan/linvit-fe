@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const DateItem = ({ amount, label }: { amount: number, label: string }) => {
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       <h4 className="text-3xl font-thin castoro-regular">{amount}</h4>
       <p className="castoro-regular text-lg">{label}</p>
     </div>
@@ -12,15 +12,15 @@ const DateItem = ({ amount, label }: { amount: number, label: string }) => {
 
 export default function WeddingDate({ data }: { data: Wedding }) {
   return (
-    <div className="flex flex-col gap-4 px-6 py-12 text-center relative overflow-clip">
-      <div className="rounded-t-full border-2 border-primary shadow-2xl shadow-primary bg-[#c0985d34] bg-opacity-20 ">
+    <div className="flex flex-col gap-4 px-5 py-24 text-center relative overflow-clip">
+      <div className="rounded-t-full  shadow-2xl bg-[#fef0e1d7] bg-opacity-20 ">
         <div className="pt-9 pb-2 px-7 flex flex-col items-center">
           <Image
             src="https://picsum.photos/id/255/200/300"
             height={300}
             width={200}
             alt="date"
-            className="rounded-[92px] mb-8 border border-primary"
+            className="rounded-[92px] mb-8 border-2 border-white shadow-2xl"
           />
 
           <h1 className="text-5xl text-primary font-semibold mb-8 pinyon-script-regular">Our Journey</h1>

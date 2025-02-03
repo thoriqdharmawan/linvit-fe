@@ -84,7 +84,7 @@ export default function Akad({ data }: { data: Wedding }) {
         </p>
       </div>
 
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-16">
         <Card
           title="Akad"
           address={data.akad_address}
