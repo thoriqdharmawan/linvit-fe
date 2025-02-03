@@ -1,3 +1,39 @@
+import Image from "next/image";
+import { ImageGallery } from "react-image-grid-gallery";
+
+const imagesArray = [
+  {
+    id: "1",
+    alt: "text 1",
+    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
+  },
+  {
+    id: "2",
+    alt: "Image2's alt text",
+    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/f5V7ssSC088njEOM3pNTlA7CCevO9feeDk0b4ERw.jpg",
+  },
+  {
+    id: "3",
+    alt: "Image3's alt text",
+    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
+  },
+  {
+    id: "11",
+    alt: "text 1",
+    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/SpGkEttKFmtG0NyEY4rdELTMrXZX5oH8cbEiuevT.jpg",
+  },
+  {
+    id: "21",
+    alt: "Image2's alt text",
+    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
+  },
+  {
+    id: "31",
+    alt: "Image3's alt text",
+    src: "https://zivora.s3.ap-southeast-2.amazonaws.com/users/thoriq-nisa/3JEsPzxOXvtc3rNkuRsnyoV8ACEF5vdXzvdDL0UG.jpg",
+  },
+];
+
 export default function OurMoments() {
   return (
     <div className="py-20 flex flex-col gap-12">
@@ -14,14 +50,26 @@ export default function OurMoments() {
 
       <div>
         <h2 className="castoro-regular mb-12 text-center text-3xl font-semibold text-body">Our Moments</h2>
-        <div>
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quos obcaecati minus explicabo est eligendi
-            doloremque id beatae natus ad cumque soluta omnis voluptates, voluptas, blanditiis et? Deserunt, et facere.
-          </p>
-        </div>
+
+        <ImageGallery
+          imagesInfoArray={imagesArray}
+          columnCount={2}
+          columnWidth={160}
+          gapSize={8}
+          customStyles={{
+            imageContainerStyle: {
+              margin: 0
+            }
+          }}
+        />
       </div>
 
+      <Image
+        src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/bg-pink.webp"
+        fill
+        alt="bg"
+        className="absolute -z-10 object-cover"
+      />
     </div>
   )
 }
