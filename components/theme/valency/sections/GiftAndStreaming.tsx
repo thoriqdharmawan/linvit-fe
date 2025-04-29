@@ -13,7 +13,7 @@ const Card = ({ title, desc, label, icon }: CardProps) => {
   return (
     <div className="text-center bg-[#fef0e1d7] px-4 py-12 rounded-xl mb-4 shadow-2xl">
       <h3 className="castoro-regular text-primary mb-3 text-center text-xl font-semibold">{title}</h3>
-      <p className="castoro-regular text-body leading-8 text-sm">{desc}</p>
+      <p className="castoro-regular text-body leading-8 text-sm text-gray-500">{desc}</p>
 
       <div className="flex items-center justify-center mt-4">
         <button

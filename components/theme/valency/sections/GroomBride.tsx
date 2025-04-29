@@ -17,11 +17,11 @@ const Couple = (props: Photo) => {
         <Image fill src={src} alt={name} className="object-cover" />
       </div>
 
-      <h2 className="pinyon-script-regular mb-6 text-5xl font-semibold">
+      <h2 className="pinyon-script-regular mb-6 text-5xl font-semibold text-primary">
         {nickname}
       </h2>
-      <h2 className="castoro-regular mb-4 text-xl">{name}</h2>
-      <p className="castoro-regular">{parent}</p>
+      <h2 className="castoro-regular mb-2 text-xl text-gray-500">{name}</h2>
+      <p className="castoro-regular text-gray-500">{parent}</p>
     </div>
   );
 };
@@ -30,7 +30,7 @@ export default function GroomBridge({ data }: { data: Wedding }) {
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-4 py-20 text-center">
       <div className="flex flex-col items-center justify-center rounded-3xl bg-[#fef0e1d7] px-8 py-24 shadow-xl">
-        <h1 className="castoro-regular mb-12 text-3xl font-semibold text-body">
+        <h1 className="castoro-regular mb-12 text-3xl font-semibold text-primary">
           GROOM & BRIDE
         </h1>
 

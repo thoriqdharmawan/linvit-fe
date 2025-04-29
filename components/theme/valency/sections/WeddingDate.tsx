@@ -4,8 +4,8 @@ import Image from "next/image";
 const DateItem = ({ amount, label }: { amount: number, label: string }) => {
   return (
     <div className="flex flex-col gap-1">
-      <h4 className="text-3xl font-thin castoro-regular">{amount}</h4>
-      <p className="castoro-regular text-lg">{label}</p>
+      <h4 className="text-3xl font-thin castoro-regular text-primary">{amount}</h4>
+      <p className="castoro-regular text-lg text-gray-500">{label}</p>
     </div>
   )
 }
@@ -23,9 +23,9 @@ export default function WeddingDate({ data }: { data: Wedding }) {
             className="rounded-[92px] mb-8 border-2 border-white shadow-2xl"
           />
 
-          <h1 className="text-5xl text-primary font-semibold mb-8 pinyon-script-regular">Our Journey</h1>
+          <h2 className="text-5xl text-primary font-semibold mb-8 pinyon-script-regular">Our Journey</h2>
 
-          <p className="mb-8 castoro-regular text-body leading-8">{data.our_journey}</p>
+          <p className="mb-8 castoro-regular text-body leading-8 text-gray-500">{data.our_journey}</p>
 
           <div className="grid grid-cols-2 gap-12">
             <DateItem amount={3} label="Days" />

@@ -26,13 +26,13 @@ const Card = (props: Props) => {
       />
 
       <div className="px-6 py-12">
-        <h2 className="pinyon-script-regular mb-6 text-5xl font-semibold text-body">{title}</h2>
+        <h2 className="pinyon-script-regular mb-6 text-5xl font-semibold text-primary">{title}</h2>
 
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
             <h3 className="castoro-regular text-lg capitalize text-body">{getDay(date)}</h3>
-            <p className="castoro-regular text-lg text-body" dangerouslySetInnerHTML={{ __html: formatDate(date) }} />
-            <p className="castoro-regular text-lg text-body">{times}</p>
+            <p className="castoro-regular text-lg text-gray-500" dangerouslySetInnerHTML={{ __html: formatDate(date) }} />
+            <p className="castoro-regular text-lg text-gray-500">{times}</p>
           </div>
 
           <div className="flex items-center justify-center gap-4">
@@ -45,7 +45,7 @@ const Card = (props: Props) => {
 
           <div className="castoro-regular flex flex-col gap-4">
             <h3 className="leading-6">{location_name}</h3>
-            <p className="text-sm leading-8 text-body">{address}</p>
+            <p className="text-sm leading-8 text-gray-500">{address}</p>
           </div>
 
           <a
@@ -76,9 +76,9 @@ export default function WeddingEvent({ data }: { data: Wedding }) {
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-4 py-20 text-center">
       <div className="mb-8">
-        <h1 className="castoro-regular mb-6 text-3xl font-semibold text-body">WEDDING EVENT</h1>
+        <h1 className="castoro-regular mb-6 text-3xl font-semibold text-primary">WEDDING EVENT</h1>
 
-        <p className="castoro-regular text-sm leading-8 text-body">
+        <p className="castoro-regular text-sm leading-8 text-gray-500">
           By the grace of God, we are pleased to announce our wedding to you, our family, and our friends. We request
           the honor of your presence on our special day that will be held on:
         </p>

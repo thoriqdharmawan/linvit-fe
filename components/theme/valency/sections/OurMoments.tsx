@@ -35,7 +35,7 @@ export default function OurMoments({ data }: WeddingContextData) {
       </div>
 
       <div>
-        <h2 className="castoro-regular mb-12 text-center text-3xl font-semibold text-body">Our Moments</h2>
+        <h2 className="castoro-regular mb-12 text-center text-3xl font-semibold text-primary">Our Moments</h2>
         <div>
           <PhotoAlbum layout='columns' photos={photos} columns={2} padding={0} spacing={3} onClick={({ index }) => setIndex(index)} />
 
