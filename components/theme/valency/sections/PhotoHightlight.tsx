@@ -1,10 +1,9 @@
 import Image from "next/image"
-import type { Wedding } from "@/interfaces"
 
-export default function PhotoHightlight({ data }: { data: Wedding }) {
+export default function PhotoHightlight({ src }: { src: string }) {
   return (
     <div data-sal="slide-up" data-sal-duration="2000" className="relative h-[645px] w-full">
-      <Image src={data.photo_highlight_one} fill alt="hightlight" className="object-contain" />
+      <Image src={src} fill alt="hightlight" className="object-contain" />
     </div>
   )
 }

@@ -30,12 +30,13 @@ export default function Valency() {
             <VideoOpening data={data} />
             <WeddingDate data={data} />
             <GroomBridge data={data} />
-            <PhotoHightlight data={data} />
+            <PhotoHightlight src={data.photo_highlight_one} />
             <WeddingEvent data={data} />
             <OurMoments data={data} />
             <GiftAndStreaming />
             <RSVP />
             <OurLoveStory />
+            <PhotoHightlight src={data.photo_highlight_two} />
           </div>
         )}
 
