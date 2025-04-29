@@ -1,4 +1,5 @@
-import { ReactNode } from "react"
+import { ReactNode, useState } from "react"
+import Dialog from "@/components/common/Dialog"
 import ImagesIcon from "@/components/icons/ImagesIcon"
 import QrcodeIcon from "@/components/icons/QrcodeIcon"
 
@@ -7,9 +8,10 @@ interface CardProps {
   desc: string
   label: string
   icon: ReactNode
+  onClick?: () => void
 }
 
-const Card = ({ title, desc, label, icon }: CardProps) => {
+const Card = ({ title, desc, label, icon, onClick }: CardProps) => {
   return (
     <div
       data-sal="slide-up"
@@ -20,18 +22,22 @@ const Card = ({ title, desc, label, icon }: CardProps) => {
       <h3 className="castoro-regular mb-3 text-center text-xl font-semibold text-primary">{title}</h3>
       <p className="castoro-regular text-sm leading-8 text-body text-gray-500">{desc}</p>
 
-      <div className="mt-4 flex items-center justify-center">
-        <button className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white">
-          {icon}
+      {onClick && (
+        <div onClick={onClick} className="mt-4 flex items-center justify-center">
+          <button className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white">
+            {icon}
 
-          <p className="text-sm">{label}</p>
-        </button>
-      </div>
+            <p className="text-sm">{label}</p>
+          </button>
+        </div>
+      )}
     </div>
   )
 }
 
 export default function SharingMemoriesAndCheckin() {
+  const [isDialogOpen, setDialogOpen] = useState(false)
+
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-5 py-12 text-center">
       <Card
@@ -46,7 +52,12 @@ export default function SharingMemoriesAndCheckin() {
         desc="Show the QR code for checking in to the location for the officer to scan it because the data is integrated with the digital guestbook system. "
         label="VIEW QR CODE"
         icon={<QrcodeIcon />}
+        onClick={() => setDialogOpen(true)}
       />
+
+      <Dialog isOpen={isDialogOpen} onClose={() => setDialogOpen(false)} title="Contoh Dialog">
+        <p>Ini adalah isi dialog. Kamu bisa menambahkan form atau informasi di sini.</p>
+      </Dialog>
     </div>
   )
 }
