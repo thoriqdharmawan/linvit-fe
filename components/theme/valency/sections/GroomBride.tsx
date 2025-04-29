@@ -33,7 +33,14 @@ export default function GroomBridge({ data }: { data: Wedding }) {
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-4 py-20 text-center">
       <div className="flex flex-col items-center justify-center rounded-3xl bg-[#fef0e1d7] px-8 py-24 shadow-xl">
-        <h1 className="castoro-regular mb-12 text-3xl font-semibold text-primary">GROOM & BRIDE</h1>
+        <h1
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-out-back"
+          className="castoro-regular mb-12 text-3xl font-semibold text-primary"
+        >
+          GROOM & BRIDE
+        </h1>
 
         <div className="flex flex-col gap-8">
           <Couple
