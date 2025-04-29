@@ -8,7 +8,12 @@ interface Story {
 
 const Story = ({ title, desc, src }: Story) => {
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-4 px-4 py-4">
+    <div
+      data-sal="slide-up"
+      data-sal-duration="2000"
+      data-sal-easing="ease-out-back"
+      className="flex w-full flex-col items-center justify-center gap-4 px-4 py-4"
+    >
       <Image src={src} alt={title} width={340} height={200} className="border-8 border-[#f7ede2] shadow-2xl" />
       <div className="mt-4">
         <h3 className="mb-1 text-2xl text-primary">{title}</h3>

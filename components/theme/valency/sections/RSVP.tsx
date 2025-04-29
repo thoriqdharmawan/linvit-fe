@@ -65,7 +65,12 @@ const RSVP = () => {
   }
 
   return (
-    <div className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12">
+    <div
+      data-sal="slide-up"
+      data-sal-duration="2000"
+      data-sal-easing="ease-out-back"
+      className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12"
+    >
       <div className="text-center">
         <h2 className="mb-4 text-2xl font-bold text-primary">RSVP</h2>
         <p className="text-sm leading-8 text-gray-500">

@@ -1,8 +1,8 @@
 import Image from "next/image"
+import BuildingIcon from "@/components/icons/BuildingIcon"
+import LocationIcon from "@/components/icons/LocationIcon"
 import type { Wedding } from "@/interfaces"
 import { formatDate, getDay } from "@/utils"
-import LocationIcon from "@/components/icons/LocationIcon"
-import BuildingIcon from "@/components/icons/BuildingIcon"
 
 interface Props {
   title: string
@@ -18,7 +18,12 @@ const Card = (props: Props) => {
   const { title, address, date, lat, lng, location_name, times } = props
 
   return (
-    <div className="relative flex flex-col items-center justify-center overflow-clip rounded-3xl border-4 bg-[#fef0e1d7] shadow-2xl">
+    <div
+      data-sal="slide-up"
+      data-sal-duration="2000"
+      data-sal-easing="ease-out-back"
+      className="relative flex flex-col items-center justify-center overflow-clip rounded-3xl border-4 bg-[#fef0e1d7] shadow-2xl"
+    >
       <Image
         src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/section.webp"
         height={320}
@@ -33,7 +38,10 @@ const Card = (props: Props) => {
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
             <h3 className="castoro-regular text-lg capitalize text-body">{getDay(date)}</h3>
-            <p className="castoro-regular text-lg text-gray-500" dangerouslySetInnerHTML={{ __html: formatDate(date) }} />
+            <p
+              className="castoro-regular text-lg text-gray-500"
+              dangerouslySetInnerHTML={{ __html: formatDate(date) }}
+            />
             <p className="castoro-regular text-lg text-gray-500">{times}</p>
           </div>
 
@@ -74,7 +82,7 @@ const Card = (props: Props) => {
 export default function WeddingEvent({ data }: { data: Wedding }) {
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-4 py-20 text-center">
-      <div className="mb-8">
+      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="mb-8">
         <h1 className="castoro-regular mb-6 text-3xl font-semibold text-primary">WEDDING EVENT</h1>
 
         <p className="castoro-regular text-sm leading-8 text-gray-500">

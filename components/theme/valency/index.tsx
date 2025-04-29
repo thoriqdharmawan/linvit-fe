@@ -20,7 +20,7 @@ export default function Valency() {
   const { data } = useWeddingContext()
 
   return (
-    <div className="flex h-dvh">
+    <div data-sal="slide-up" className="flex h-dvh">
       <div className="relative hidden w-full xs:block">
         <DekstopImage />
       </div>
