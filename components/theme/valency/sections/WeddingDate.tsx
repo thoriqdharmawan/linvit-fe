@@ -1,37 +1,40 @@
-import { Wedding } from "@/interfaces";
-import Image from "next/image";
+import Image from "next/image"
+import { useCountdown } from "@/hooks/useCountdown"
+import { Wedding } from "@/interfaces"
 
-const DateItem = ({ amount, label }: { amount: number, label: string }) => {
+const DateItem = ({ amount, label }: { amount: number; label: string }) => {
   return (
     <div className="flex flex-col gap-1">
-      <h4 className="text-3xl font-thin castoro-regular text-primary">{amount}</h4>
+      <h4 className="castoro-regular text-3xl font-thin text-primary">{amount}</h4>
       <p className="castoro-regular text-lg text-gray-500">{label}</p>
     </div>
   )
 }
 
 export default function WeddingDate({ data }: { data: Wedding }) {
+  const { days, hours, minutes, seconds } = useCountdown(new Date("2025-05-12T12:00:00"))
+
   return (
-    <div className="flex flex-col gap-4 px-5 py-24 text-center relative overflow-clip">
-      <div className="rounded-t-full  shadow-2xl bg-[#fef0e1d7] bg-opacity-20 ">
-        <div className="pt-9 pb-2 px-7 flex flex-col items-center">
+    <div className="relative flex flex-col gap-4 overflow-clip px-5 py-24 text-center">
+      <div className="rounded-t-full bg-[#fef0e1d7] bg-opacity-20 shadow-2xl">
+        <div className="flex flex-col items-center px-7 pb-2 pt-9">
           <Image
             src="https://picsum.photos/id/255/200/300"
             height={300}
             width={200}
             alt="date"
-            className="rounded-[92px] mb-8 border-2 border-white shadow-2xl"
+            className="mb-8 rounded-[92px] border-2 border-white shadow-2xl"
           />
 
-          <h2 className="text-5xl text-primary font-semibold mb-8 pinyon-script-regular">Our Journey</h2>
+          <h2 className="pinyon-script-regular mb-8 text-5xl font-semibold text-primary">Our Journey</h2>
 
-          <p className="mb-8 castoro-regular text-body leading-8 text-gray-500">{data.our_journey}</p>
+          <p className="castoro-regular mb-8 leading-8 text-body text-gray-500">{data.our_journey}</p>
 
           <div className="grid grid-cols-2 gap-12">
-            <DateItem amount={3} label="Days" />
-            <DateItem amount={6} label="Hours" />
-            <DateItem amount={12} label="Minutes" />
-            <DateItem amount={42} label="Seconds" />
+            <DateItem amount={days} label="Days" />
+            <DateItem amount={hours} label="Hours" />
+            <DateItem amount={minutes} label="Minutes" />
+            <DateItem amount={seconds} label="Seconds" />
           </div>
         </div>
 
@@ -47,10 +50,8 @@ export default function WeddingDate({ data }: { data: Wedding }) {
         src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/bg-pink.webp"
         fill
         alt="bg"
-        className="object-cover absolute -z-10"
+        className="absolute -z-10 object-cover"
       />
     </div>
-  );
+  )
 }
-
-
