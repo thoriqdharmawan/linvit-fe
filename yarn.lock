@@ -2517,6 +2517,11 @@ react-lite-youtube-embed@^2.5.1:
   resolved "https://registry.yarnpkg.com/react-lite-youtube-embed/-/react-lite-youtube-embed-2.5.1.tgz#db8de1aee8e960e7a35e13b5e1aeea5437735444"
   integrity sha512-qH/0RumywPtzSx5SmWX/cUGvB3mSB7zMx3VrDe1UwyCEQ0SX785xnjRAodEel1pu3A3EhZyzSjwmLpfcaUN6KQ==
 
+react-photo-album@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-photo-album/-/react-photo-album-3.1.0.tgz#90ca5b116341543ced3024c580ebeb06394c1cfe"
+  integrity sha512-9PiWzwvckfefJRHY5E6kcNKoWNjyyFKhQ6Pl5nS1Z29QeP9h8zDOAoVQKWcv/AhZjRoduw1dybu9RNMj0+uPzQ==
+
 react@^19.0.0:
   version "19.1.0"
   resolved "https://registry.yarnpkg.com/react/-/react-19.1.0.tgz#926864b6c48da7627f004795d6cce50e90793b75"
@@ -3220,6 +3225,11 @@ yaml@^2.3.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.7.1.tgz#44a247d1b88523855679ac7fa7cda6ed7e135cf6"
   integrity sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==
+
+yet-another-react-lightbox@^3.23.0:
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/yet-another-react-lightbox/-/yet-another-react-lightbox-3.23.0.tgz#4f3673520c75885e5ed127ae6b181f4b954e9ea2"
+  integrity sha512-spSBcHYiNEqvmoZvq53ZyaOUyQeyHXYxgw/X0M8fxTYtC8Cn1Y54UlpR46w16kThROsbc+iox07iiaXUA6ao8Q==
 
 yocto-queue@^0.1.0:
   version "0.1.0"

@@ -39,4 +39,15 @@ export interface Wedding {
   thanks_message: string;
   created_at: string;
   updated_at: string;
+  photos: Photo[];
+}
+
+export interface Photo {
+  id: number;
+  wedding_id: number;
+  url: string;
+  name: string;
+  alt: string | null;
+  created_at: string;
+  updated_at: string;
 }

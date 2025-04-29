@@ -25,7 +25,7 @@ export default function Valency() {
             <GroomBridge data={data} />
             <PhotoHightlight data={data} />
             <WeddingEvent data={data} />
-            <OurMoments />
+            <OurMoments data={data} />
           </div>
         )}
 
