@@ -1,14 +1,13 @@
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+
 export default function OurMoments() {
   return (
     <div className="py-20 flex flex-col gap-12">
-      <div className="w-full overflow-hidden flex justify-center items-center">
-        <iframe
-          width="412"
-          height="246"
-          src="https://www.youtube.com/embed/fQ4VSZUVul0?si=5AL0n0PqfTJWIDvI"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
+      <div>
+        <LiteYouTubeEmbed
+          id="L2vS_050c-M"
+          title="What's new in Material Design for the web (Chrome Dev Summit 2019)"
         />
       </div>
 
