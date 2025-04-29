@@ -26,7 +26,7 @@ export default function OurMoments({ data }: WeddingContextData) {
   const photos = data?.photos.map((photo) => ({ key: `${photo.id}`, src: photo.url, width: 430, height: 600 })) ?? []
 
   return (
-    <div className="py-20 flex flex-col gap-12">
+    <div className="py-12 flex flex-col gap-12">
       <div>
         <LiteYouTubeEmbed
           id="L2vS_050c-M"
