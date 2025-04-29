@@ -1,16 +1,20 @@
+import dynamic from "next/dynamic"
 import Image from "next/image"
 import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
 import { useWeddingContext } from "@/providers/WeddingProvider"
+import GiftAndStreaming from "./sections/GiftAndStreaming"
 import GroomBridge from "./sections/GroomBride"
+import OurLoveStory from "./sections/OurLoveStory"
+import OurMoments from "./sections/OurMoments"
 import PhotoHightlight from "./sections/PhotoHightlight"
+import RSVP from "./sections/RSVP"
 import VideoOpening from "./sections/VideoOpening"
-import WeddingDate from "./sections/WeddingDate"
 import WeddingEvent from "./sections/WeddingEvent"
 import "./styles/index.css"
-import OurMoments from "./sections/OurMoments"
-import GiftAndStreaming from "./sections/GiftAndStreaming"
-import RSVP from "./sections/RSVP"
-import OurLoveStory from "./sections/OurLoveStory"
+
+const WeddingDate = dynamic(() => import("./sections/WeddingDate"), {
+  ssr: false,
+})
 
 export default function Valency() {
   const { data } = useWeddingContext()

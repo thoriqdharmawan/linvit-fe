@@ -23,7 +23,7 @@ export default function WeddingDate({ data }: { data: Wedding }) {
             height={300}
             width={200}
             alt="date"
-            className="mb-8 rounded-[92px] border-2 border-white shadow-2xl"
+            className="mb-8 rounded-[92px] border-8 border-[#f7ede2] shadow-2xl"
           />
 
           <h2 className="pinyon-script-regular mb-8 text-5xl font-semibold text-primary">Our Journey</h2>
@@ -43,6 +43,7 @@ export default function WeddingDate({ data }: { data: Wedding }) {
           height={320}
           width={420}
           alt="btm-img"
+          className="w-full"
         />
       </div>
 
