@@ -44,7 +44,7 @@ export default function SharingMemoriesAndCheckin() {
       <Card
         title="QR CHECK-IN"
         desc="Show the QR code for checking in to the location for the officer to scan it because the data is integrated with the digital guestbook system. "
-        label="QR CHECK-IN"
+        label="VIEW QR CODE"
         icon={<QrcodeIcon />}
       />
     </div>
