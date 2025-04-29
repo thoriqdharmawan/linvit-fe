@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
+import SharingMemoriesAndCheckin from "@/components/theme/valency/sections/SharingMemoriesAndCheckin"
 import { useWeddingContext } from "@/providers/WeddingProvider"
 import GiftAndStreaming from "./sections/GiftAndStreaming"
 import GroomBridge from "./sections/GroomBride"
@@ -37,6 +38,7 @@ export default function Valency() {
             <RSVP />
             <OurLoveStory />
             <PhotoHightlight src={data.photo_highlight_two} />
+            <SharingMemoriesAndCheckin />
           </div>
         )}
 
