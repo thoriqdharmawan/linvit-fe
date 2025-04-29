@@ -1,112 +1,121 @@
-import { useState, FormEvent } from "react";
-import PaperPlaneIcon from "@/components/icons/PaperPlane";
+import { useState, FormEvent } from "react"
+import PaperPlaneIcon from "@/components/icons/PaperPlane"
 
 const RSVP = () => {
   const [formData, setFormData] = useState({
     name: "",
     address: "",
     attendance: "yes",
-    guests: "1"
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    guests: "1",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<{
-    success?: boolean;
-    message?: string;
-  }>({});
+    success?: boolean
+    message?: string
+  }>({})
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
-  };
+    const { id, value } = e.target
+    setFormData((prev) => ({ ...prev, [id]: value }))
+  }
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!formData.name.trim()) {
-      setSubmitStatus({ success: false, message: "Please enter your name" });
-      return;
+      setSubmitStatus({ success: false, message: "Please enter your name" })
+      return
     }
 
     if (formData.attendance === "yes" && !formData.guests) {
-      setSubmitStatus({ success: false, message: "Please select number of guests" });
-      return;
+      setSubmitStatus({ success: false, message: "Please select number of guests" })
+      return
     }
 
     try {
-      setIsSubmitting(true);
+      setIsSubmitting(true)
 
-      const response = await fetch('/api/rsvp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+      const response = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
 
-      if (!response.ok) throw new Error('Failed to submit RSVP');
+      if (!response.ok) throw new Error("Failed to submit RSVP")
 
       setSubmitStatus({
         success: true,
-        message: "Thank you for your RSVP!"
-      });
+        message: "Thank you for your RSVP!",
+      })
 
       setFormData({
         name: "",
         address: "",
         attendance: "yes",
-        guests: ""
-      });
-    } catch (error) {
+        guests: "",
+      })
+    } catch {
       setSubmitStatus({
         success: false,
-        message: "Failed to submit RSVP. Please try again."
-      });
+        message: "Failed to submit RSVP. Please try again.",
+      })
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
-    <div className="py-12 px-5 flex flex-col gap-12 bg-[#fef0e1] castoro-regular">
+    <div className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12">
       <div className="text-center">
-        <h2 className="text-2xl font-bold mb-4 text-primary">RSVP</h2>
-        <p className="text-gray-500 leading-8 text-sm">Please help us prepare everything better by confirming your attendance at our wedding event with the following RSVP form:</p>
+        <h2 className="mb-4 text-2xl font-bold text-primary">RSVP</h2>
+        <p className="text-sm leading-8 text-gray-500">
+          Please help us prepare everything better by confirming your attendance at our wedding event with the following
+          RSVP form:
+        </p>
       </div>
 
       {submitStatus.message && (
-        <div className={`text-center ${submitStatus.success ? 'text-green-600' : 'text-red-600'}`}>
+        <div className={`text-center ${submitStatus.success ? "text-green-600" : "text-red-600"}`}>
           {submitStatus.message}
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
         <div className="w-full max-w-xs">
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+          <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-700">
+            Name
+          </label>
           <input
             id="name"
             type="text"
             placeholder="Input Name"
-            className="border p-2 rounded w-full text-sm"
+            className="w-full rounded border p-2 text-sm"
             value={formData.name}
             onChange={handleChange}
           />
         </div>
 
         <div className="w-full max-w-xs">
-          <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">Address (optional)</label>
+          <label htmlFor="address" className="mb-1 block text-sm font-medium text-gray-700">
+            Address (optional)
+          </label>
           <input
             id="address"
             type="text"
             placeholder="Input Address"
-            className="border p-2 rounded w-full text-sm"
+            className="w-full rounded border p-2 text-sm"
             value={formData.address}
             onChange={handleChange}
           />
         </div>
 
         <div className="w-full max-w-xs">
-          <label htmlFor="attendance" className="block text-sm font-medium text-gray-700 mb-1">Will you attend?</label>
+          <label htmlFor="attendance" className="mb-1 block text-sm font-medium text-gray-700">
+            Will you attend?
+          </label>
           <select
             id="attendance"
-            className="border p-2 rounded w-full text-sm"
+            className="w-full rounded border p-2 text-sm"
             value={formData.attendance}
             onChange={handleChange}
           >
@@ -116,10 +125,12 @@ const RSVP = () => {
         </div>
 
         <div className="w-full max-w-xs">
-          <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-1">Amount of guests</label>
+          <label htmlFor="guests" className="mb-1 block text-sm font-medium text-gray-700">
+            Amount of guests
+          </label>
           <select
             id="guests"
-            className="border p-2 rounded w-full text-sm"
+            className="w-full rounded border p-2 text-sm"
             value={formData.guests}
             onChange={handleChange}
             disabled={formData.attendance === "no"}
@@ -133,11 +144,11 @@ const RSVP = () => {
           </select>
         </div>
 
-        <div className="w-full max-w-xs mt-4">
+        <div className="mt-4 w-full max-w-xs">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="castoro-regular flex items-center justify-center rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white w-full gap-4 disabled:opacity-70"
+            className="castoro-regular flex w-full items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white disabled:opacity-70"
           >
             <PaperPlaneIcon />
             <p className="text-sm">{isSubmitting ? "Submitting..." : "Submit"}</p>
@@ -145,7 +156,7 @@ const RSVP = () => {
         </div>
       </form>
     </div>
-  );
+  )
 }
 
-export default RSVP;
+export default RSVP
