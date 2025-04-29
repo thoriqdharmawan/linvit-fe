@@ -9,6 +9,7 @@ import WeddingEvent from "./sections/WeddingEvent"
 import "./styles/index.css"
 import OurMoments from "./sections/OurMoments"
 import GiftAndStreaming from "./sections/GiftAndStreaming"
+import RSVP from "./sections/RSVP"
 
 export default function Valency() {
   const { data } = useWeddingContext()
@@ -28,6 +29,7 @@ export default function Valency() {
             <WeddingEvent data={data} />
             <OurMoments data={data} />
             <GiftAndStreaming />
+            <RSVP />
           </div>
         )}
 
