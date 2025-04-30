@@ -8,6 +8,26 @@ const Countdown = dynamic(() => import("@/components/theme/valency/sections/Coun
 })
 
 export default function WeddingDate({ data }: { data: Wedding }) {
+  const createGoogleCalendarUrl = () => {
+    const eventTitle = `Wedding of ${data.bride_name} & ${data.groom_name}`
+
+    const weddingDate = new Date(data.wedding_date)
+
+    const startDate = new Date(weddingDate)
+
+    const endDate = new Date(startDate)
+    endDate.setHours(startDate.getHours() + 3)
+
+    const formatDateForGCal = (date: Date) => {
+      return date.toISOString().replace(/-|:|\.\d+/g, "")
+    }
+
+    const startDateStr = formatDateForGCal(startDate)
+    const endDateStr = formatDateForGCal(endDate)
+
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDateStr}/${endDateStr}&details=${encodeURIComponent(data.our_journey)}`
+  }
+
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-5 py-24 text-center">
       <div className="rounded-t-full bg-[#fef0e1d7] bg-opacity-20 shadow-2xl">
@@ -50,10 +70,15 @@ export default function WeddingDate({ data }: { data: Wedding }) {
             data-sal-delay="300"
             className="my-12 flex items-center justify-center"
           >
-            <button className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white">
+            <a
+              href={createGoogleCalendarUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white"
+            >
               <DateIcon />
               <p className="text-sm">SAVE THE DATE</p>
-            </button>
+            </a>
           </div>
         </div>
 
