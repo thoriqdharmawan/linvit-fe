@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import ExitFullscreenIcon from "@/components/icons/ExitFullscreenIcon"
 import PauseIcon from "@/components/icons/PauseIcon"
 import PlayIcon from "@/components/icons/PlayIcon"
 import BestWhises from "@/components/theme/valency/sections/BestWhises"
@@ -27,6 +28,7 @@ export default function Valency() {
   const { data } = useWeddingContext()
   const { play, pause, isPlaying } = useAudio(audioUrl)
 
+  const [fullscreen, setFullscreen] = useState(true)
   const [invitationOpened, setInvitationOpened] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
 
@@ -43,12 +45,31 @@ export default function Valency() {
     }, 200)
   }
 
+  const handleExitFullscreen = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen()
+      setFullscreen(false)
+    }
+  }
+
+  const isFullscreen = fullscreen && document.fullscreenElement !== null
+
   return (
     <div data-sal="slide-up" className="flex h-dvh">
       <div className="relative hidden w-full xs:block">
         <DekstopImage />
       </div>
+
       <div className="relative h-dvh w-full xs:max-w-[430px]">
+        {isFullscreen && (
+          <button
+            onClick={handleExitFullscreen}
+            className="fixed bottom-6 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur transition-all hover:scale-110 active:scale-95"
+          >
+            <ExitFullscreenIcon />
+          </button>
+        )}
+
         {invitationOpened && (
           <button
             onClick={isPlaying ? pause : play}

@@ -1,3 +1,4 @@
+import { useCallback } from "react"
 import { Wedding } from "@/interfaces"
 
 interface Props {
@@ -8,6 +9,32 @@ interface Props {
 
 const Cover = (props: Props) => {
   const { data, isAnimating, onOpenInvitation } = props
+
+  const requestFullscreen = useCallback(() => {
+    try {
+      const docEl = document.documentElement
+
+      if (docEl.requestFullscreen) {
+        docEl.requestFullscreen()
+      } else if ((docEl as any).mozRequestFullScreen) {
+        /* Firefox */
+        ;(docEl as any).mozRequestFullScreen()
+      } else if ((docEl as any).webkitRequestFullscreen) {
+        /* Chrome, Safari & Opera */
+        ;(docEl as any).webkitRequestFullscreen()
+      } else if ((docEl as any).msRequestFullscreen) {
+        /* IE/Edge */
+        ;(docEl as any).msRequestFullscreen()
+      }
+    } catch (error) {
+      console.error("Fullscreen request failed:", error)
+    }
+  }, [])
+
+  const handleOpenClick = () => {
+    requestFullscreen()
+    onOpenInvitation()
+  }
 
   return (
     <div
@@ -27,7 +54,7 @@ const Cover = (props: Props) => {
           <p>Fullan Antoni Jastin</p>
         </div>
         <button
-          onClick={onOpenInvitation}
+          onClick={handleOpenClick}
           className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white"
         >
           Buka Undangan
