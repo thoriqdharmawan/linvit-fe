@@ -1,6 +1,5 @@
-import { ReactNode, useRef, useState } from "react"
+import { ReactNode, useState } from "react"
 import QRCode from "react-qr-code"
-import { toPng } from "html-to-image"
 import Dialog from "@/components/common/Dialog"
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon"
 import ImagesIcon from "@/components/icons/ImagesIcon"
