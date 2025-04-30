@@ -86,7 +86,7 @@ const RSVP = () => {
       )}
 
       <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
-        <div className="w-full max-w-xs">
+        <div className="w-full max-w-sm">
           <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-700">
             Name
           </label>
@@ -100,7 +100,7 @@ const RSVP = () => {
           />
         </div>
 
-        <div className="w-full max-w-xs">
+        <div className="w-full max-w-sm">
           <label htmlFor="address" className="mb-1 block text-sm font-medium text-gray-700">
             Address (optional)
           </label>
@@ -114,7 +114,7 @@ const RSVP = () => {
           />
         </div>
 
-        <div className="w-full max-w-xs">
+        <div className="w-full max-w-sm">
           <label htmlFor="attendance" className="mb-1 block text-sm font-medium text-gray-700">
             Will you attend?
           </label>
@@ -129,7 +129,7 @@ const RSVP = () => {
           </select>
         </div>
 
-        <div className="w-full max-w-xs">
+        <div className="w-full max-w-sm">
           <label htmlFor="guests" className="mb-1 block text-sm font-medium text-gray-700">
             Amount of guests
           </label>
@@ -149,7 +149,7 @@ const RSVP = () => {
           </select>
         </div>
 
-        <div className="mt-4 w-full max-w-xs">
+        <div className="mt-4 w-full max-w-sm">
           <button
             type="submit"
             disabled={isSubmitting}
