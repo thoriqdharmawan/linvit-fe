@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import PauseIcon from "@/components/icons/PauseIcon"
 import PlayIcon from "@/components/icons/PlayIcon"
 import BestWhises from "@/components/theme/valency/sections/BestWhises"
+import Cover from "@/components/theme/valency/sections/Cover"
 import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
 import Footer from "@/components/theme/valency/sections/Footer"
 import SharingMemoriesAndCheckin from "@/components/theme/valency/sections/SharingMemoriesAndCheckin"
@@ -23,8 +25,23 @@ const audioUrl = "https://zivora.s3.ap-southeast-2.amazonaws.com/musics/wedding-
 
 export default function Valency() {
   const { data } = useWeddingContext()
-
   const { play, pause, isPlaying } = useAudio(audioUrl)
+
+  const [invitationOpened, setInvitationOpened] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  useEffect(() => {
+    if (invitationOpened) {
+      play()
+    }
+  }, [invitationOpened])
+
+  const handleOpenInvitation = () => {
+    setIsAnimating(true)
+    setTimeout(() => {
+      setInvitationOpened(true)
+    }, 200)
+  }
 
   return (
     <div data-sal="slide-up" className="flex h-dvh">
@@ -32,17 +49,21 @@ export default function Valency() {
         <DekstopImage />
       </div>
       <div className="relative h-dvh w-full xs:max-w-[430px]">
-        <button
-          onClick={isPlaying ? pause : play}
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur transition-all hover:scale-110 active:scale-95"
-          aria-label={isPlaying ? "Pause music" : "Play music"}
-        >
-          {isPlaying ? <PauseIcon /> : <PlayIcon />}
-        </button>
+        {invitationOpened && (
+          <button
+            onClick={isPlaying ? pause : play}
+            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur transition-all hover:scale-110 active:scale-95"
+            aria-label={isPlaying ? "Pause music" : "Play music"}
+          >
+            {isPlaying ? <PauseIcon /> : <PlayIcon />}
+          </button>
+        )}
+
+        {!invitationOpened && <Cover data={data} isAnimating={isAnimating} onOpenInvitation={handleOpenInvitation} />}
 
         {data && (
-          <div className="h-dvh w-full overflow-y-auto">
-            <VideoOpening data={data} />
+          <div className={`h-dvh w-full overflow-y-auto ${!invitationOpened ? "hidden" : ""}`}>
+            <VideoOpening data={data} autoPlay={invitationOpened} />
             <WeddingDate data={data} />
             <GroomBridge data={data} />
             <PhotoHightlight src={data.photo_highlight_one} />
