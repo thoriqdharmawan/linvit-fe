@@ -67,25 +67,29 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
             with the digital guestbook system.
           </p>
 
-          <div className="mb-2 rounded-lg bg-[#fef0e1d7] px-4 py-8">
-            <h3 className="castoro-regular mb-2 text-lg font-medium text-primary">THE WEDDING OF</h3>
-            <div className="mb-8 text-sm text-gray-500">
-              <p className="pinyon-script-regular text-5xl font-semibold text-primary">
-                {data.bride_nickname} & {data.groom_nickname}
-              </p>
-              <p
-                className="castoro-regular m-0"
-                dangerouslySetInnerHTML={{ __html: formatDate(data.wedding_date) }}
-              ></p>
-            </div>
-
-            <div className="flex items-center justify-center">
-              <div className="bg-white p-3">
-                <QRCode value="Hello, World!" size={110} />
+          <div className="mb-2 rounded-lg bg-[#fef0e1d7]">
+            <div className="px-4 py-6">
+              <h3 className="castoro-regular mb-2 text-lg font-medium text-primary">THE WEDDING OF</h3>
+              <div className="mb-8 text-sm text-gray-500">
+                <p className="pinyon-script-regular text-5xl font-semibold text-primary">
+                  {data.bride_nickname} & {data.groom_nickname}
+                </p>
+                <p
+                  className="castoro-regular m-0"
+                  dangerouslySetInnerHTML={{ __html: formatDate(data.wedding_date) }}
+                ></p>
               </div>
+              <div className="flex items-center justify-center">
+                <div className="bg-white p-3">
+                  <QRCode value="Hello, World!" size={128} />
+                </div>
+              </div>
+              <p className="castoro-regular mt-3 text-gray-500">Thoriq Dharmawan</p>
             </div>
 
-            <p className="castoro-regular mt-4 text-gray-500">Thoriq Dharmawan</p>
+            <div className="border-t border-dashed border-gray-300 py-2">
+              <p className="castoro-regular text-xs text-gray-400">www.zivora.com</p>
+            </div>
           </div>
 
           <p className="castoro-regular mb-2 text-xs leading-8 text-gray-500">
