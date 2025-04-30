@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
 import Image from "next/image"
+import DateIcon from "@/components/icons/DateIcon"
 import { Wedding } from "@/interfaces"
 
 const Countdown = dynamic(() => import("@/components/theme/valency/sections/CountDown"), {
@@ -42,6 +43,18 @@ export default function WeddingDate({ data }: { data: Wedding }) {
           </p>
 
           <Countdown date="2025-05-12T12:00:00" />
+
+          <div
+            data-sal="slide-up"
+            data-sal-duration="2000"
+            data-sal-delay="300"
+            className="my-12 flex items-center justify-center"
+          >
+            <button className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white">
+              <DateIcon />
+              <p className="text-sm">SAVE THE DATE</p>
+            </button>
+          </div>
         </div>
 
         <Image
