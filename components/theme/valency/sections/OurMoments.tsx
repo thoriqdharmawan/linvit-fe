@@ -31,6 +31,7 @@ export default function OurMoments({ data }: WeddingContextData) {
         <h2
           data-sal="slide-up"
           data-sal-duration="2000"
+          data-sal-easing="ease-out-back"
           className="castoro-regular mb-12 text-center text-3xl font-semibold text-primary"
         >
           Our Moments
