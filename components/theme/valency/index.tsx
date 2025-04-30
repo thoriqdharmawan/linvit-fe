@@ -3,6 +3,7 @@ import Image from "next/image"
 import BestWhises from "@/components/theme/valency/sections/BestWhises"
 import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
 import SharingMemoriesAndCheckin from "@/components/theme/valency/sections/SharingMemoriesAndCheckin"
+import ThankYou from "@/components/theme/valency/sections/ThankYou"
 import { useWeddingContext } from "@/providers/WeddingProvider"
 import GiftAndStreaming from "./sections/GiftAndStreaming"
 import GroomBridge from "./sections/GroomBride"
@@ -41,6 +42,7 @@ export default function Valency() {
             <PhotoHightlight src={data.photo_highlight_two} />
             <SharingMemoriesAndCheckin data={data} />
             <BestWhises />
+            <ThankYou data={data} />
           </div>
         )}
 
