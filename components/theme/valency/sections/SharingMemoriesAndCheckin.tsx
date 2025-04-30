@@ -60,9 +60,9 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
       />
 
       <Dialog isOpen={isDialogOpen} onClose={() => setDialogOpen(false)}>
-        <div className="px-3 py-8">
+        <div className="py-8">
           <h2 className="castoro-regular mb-4 text-xl font-semibold text-primary">QR CHECK-IN</h2>
-          <p className="mb-4 text-sm leading-8 text-gray-500">
+          <p className="castoro-regular mb-4 text-sm leading-8 text-gray-500">
             Show the QR code for checking in to the location for the officer to scan it because the data is integrated
             with the digital guestbook system.
           </p>
@@ -81,14 +81,14 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
 
             <div className="flex items-center justify-center">
               <div className="bg-white p-3">
-                <QRCode value="Hello, World!" />
+                <QRCode value="Hello, World!" size={110} />
               </div>
             </div>
 
             <p className="castoro-regular mt-4 text-gray-500">Thoriq Dharmawan</p>
           </div>
 
-          <p className="mb-2 text-sm leading-8 text-gray-500">
+          <p className="castoro-regular mb-2 text-xs leading-8 text-gray-500">
             Scan the QR code above to check in at the event location.
           </p>
 
