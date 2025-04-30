@@ -5,6 +5,7 @@ import Dialog from "@/components/common/Dialog"
 import ArrowDownIcon from "@/components/icons/ArrowDownIcon"
 import ImagesIcon from "@/components/icons/ImagesIcon"
 import QrcodeIcon from "@/components/icons/QrcodeIcon"
+import { useDownloadImage } from "@/hooks/useDownloadImage"
 import { Wedding } from "@/interfaces"
 import { formatDate } from "@/utils"
 
@@ -42,36 +43,7 @@ const Card = ({ title, desc, label, icon, onClick }: CardProps) => {
 
 export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
   const [isDialogOpen, setDialogOpen] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
-
-  const handleDownload = async () => {
-    if (cardRef.current) {
-      const clone = cardRef.current.cloneNode(true) as HTMLDivElement
-      document.body.appendChild(clone)
-
-      clone.style.width = "464px"
-      clone.style.height = "601px"
-
-      try {
-        const dataUrl = await toPng(clone, {
-          canvasHeight: 601 * 1.5,
-          canvasWidth: 464 * 1.5,
-          quality: 1,
-          style: {
-            width: "100%",
-            height: "100%",
-          },
-        })
-
-        const link = document.createElement("a")
-        link.download = "e-invitation.png"
-        link.href = dataUrl
-        link.click()
-      } finally {
-        document.body.removeChild(clone)
-      }
-    }
-  }
+  const { elementRef, downloadImage } = useDownloadImage()
 
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-5 py-12 text-center">
@@ -91,7 +63,7 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
       />
 
       <Dialog isOpen={isDialogOpen} onClose={() => setDialogOpen(false)}>
-        <div ref={cardRef} className="bg-white pt-8 text-center">
+        <div ref={elementRef} className="bg-white pt-8 text-center">
           <h2 className="castoro-regular mb-4 text-xl font-semibold text-primary">QR CHECK-IN</h2>
           <p className="castoro-regular mb-4 text-sm leading-8 text-gray-500">
             Show the QR code for checking in to the location for the officer to scan it because the data is integrated
@@ -130,7 +102,7 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
 
         <div className="flex w-full justify-center pb-8">
           <button
-            onClick={handleDownload}
+            onClick={() => downloadImage("qr-check-in.png")}
             className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white"
           >
             <ArrowDownIcon />
