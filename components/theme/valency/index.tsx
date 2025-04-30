@@ -2,6 +2,7 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import BestWhises from "@/components/theme/valency/sections/BestWhises"
 import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
+import Footer from "@/components/theme/valency/sections/Footer"
 import SharingMemoriesAndCheckin from "@/components/theme/valency/sections/SharingMemoriesAndCheckin"
 import ThankYou from "@/components/theme/valency/sections/ThankYou"
 import { useWeddingContext } from "@/providers/WeddingProvider"
@@ -43,6 +44,7 @@ export default function Valency() {
             <SharingMemoriesAndCheckin data={data} />
             <BestWhises />
             <ThankYou data={data} />
+            <Footer />
           </div>
         )}
 
