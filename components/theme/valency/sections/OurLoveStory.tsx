@@ -11,7 +11,7 @@ const Story = ({ title, desc, src }: Story) => {
     <div
       data-sal="slide-up"
       data-sal-duration="2000"
-      data-sal-easing="ease-out-back"
+      data-sal-easing="ease-in-out-quint"
       className="flex w-full flex-col items-center justify-center gap-4 px-4 py-4"
     >
       <Image src={src} alt={title} width={340} height={200} className="border-8 border-[#f7ede2] shadow-2xl" />

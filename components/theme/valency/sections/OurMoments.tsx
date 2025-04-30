@@ -23,7 +23,7 @@ export default function OurMoments({ data }: WeddingContextData) {
 
   return (
     <div className="flex flex-col gap-12 py-12">
-      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back">
+      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-in-out-quint">
         <LiteYouTubeEmbed id="C1lbA0vel10" title="our wedding" />
       </div>
 
@@ -31,7 +31,7 @@ export default function OurMoments({ data }: WeddingContextData) {
         <h2
           data-sal="slide-up"
           data-sal-duration="2000"
-          data-sal-easing="ease-out-back"
+          data-sal-easing="ease-in-out-quint"
           className="castoro-regular mb-12 text-center text-3xl font-semibold text-primary"
         >
           Our Moments

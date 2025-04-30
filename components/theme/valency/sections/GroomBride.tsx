@@ -16,7 +16,7 @@ const Couple = (props: Photo) => {
       <div
         data-sal="slide-up"
         data-sal-duration="2000"
-        data-sal-easing="ease-out-back"
+        data-sal-easing="ease-in-out-quint"
         className="relative mb-8 flex h-80 w-60 overflow-hidden rounded-full border-8 border-[#fff8f2] shadow-2xl"
       >
         <Image fill src={src} alt={name} className="object-cover" />
@@ -25,7 +25,7 @@ const Couple = (props: Photo) => {
       <h2
         data-sal="slide-up"
         data-sal-duration="2000"
-        data-sal-easing="ease-out-back"
+        data-sal-easing="ease-in-out-quint"
         className="pinyon-script-regular mb-6 text-5xl font-semibold text-primary"
       >
         {nickname}
@@ -33,7 +33,7 @@ const Couple = (props: Photo) => {
       <h2
         data-sal="slide-up"
         data-sal-duration="2000"
-        data-sal-easing="ease-out-back"
+        data-sal-easing="ease-in-out-quint"
         className="castoro-regular mb-2 text-xl text-gray-500"
       >
         {name}
@@ -41,7 +41,7 @@ const Couple = (props: Photo) => {
       <p
         data-sal="slide-up"
         data-sal-duration="2000"
-        data-sal-easing="ease-out-back"
+        data-sal-easing="ease-in-out-quint"
         className="castoro-regular text-gray-500"
       >
         {parent}
@@ -57,7 +57,7 @@ export default function GroomBridge({ data }: { data: Wedding }) {
         <h1
           data-sal="slide-up"
           data-sal-duration="2000"
-          data-sal-easing="ease-out-back"
+          data-sal-easing="ease-in-out-quint"
           className="castoro-regular mb-12 text-3xl font-semibold text-primary"
         >
           GROOM & BRIDE
@@ -73,7 +73,7 @@ export default function GroomBridge({ data }: { data: Wedding }) {
           <p
             data-sal="slide-up"
             data-sal-duration="2000"
-            data-sal-easing="ease-out-back"
+            data-sal-easing="ease-in-out-quint"
             className="pinyon-script-regular text-6xl font-semibold"
           >
             &

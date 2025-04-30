@@ -14,7 +14,7 @@ const Card = ({ title, desc, label, icon }: CardProps) => {
     <div
       data-sal="slide-up"
       data-sal-duration="2000"
-      data-sal-easing="ease-out-back"
+      data-sal-easing="ease-in-out-quint"
       className="mb-4 rounded-xl bg-[#fef0e1d7] px-4 py-12 text-center shadow-2xl"
     >
       <h3 className="castoro-regular mb-3 text-center text-xl font-semibold text-primary">{title}</h3>

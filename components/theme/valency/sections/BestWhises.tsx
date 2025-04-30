@@ -56,7 +56,7 @@ const BestWhises = () => {
 
   return (
     <div className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12">
-      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="text-center">
+      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-in-out-quint" className="text-center">
         <h2 className="mb-4 text-2xl font-bold text-primary">BEST WHISES</h2>
         <p className="text-sm leading-8 text-gray-500">
           We are so grateful to have you in our lives. Your presence at our wedding is the greatest gift of all. Thank
@@ -68,7 +68,7 @@ const BestWhises = () => {
         <div
           data-sal="slide-up"
           data-sal-duration="2000"
-          data-sal-easing="ease-out-back"
+          data-sal-easing="ease-in-out-quint"
           className="text-center text-green-600"
         >
           <p>Thank you for your wish!</p>
@@ -78,7 +78,12 @@ const BestWhises = () => {
       <form className="flex flex-col items-center gap-4" onSubmit={handleSubmit}>
         {error && <p className="text-sm text-red-500">{error}</p>}
 
-        <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="w-full max-w-sm">
+        <div
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-in-out-quint"
+          className="w-full max-w-sm"
+        >
           <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-700">
             Name
           </label>
@@ -93,7 +98,12 @@ const BestWhises = () => {
           />
         </div>
 
-        <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="w-full max-w-sm">
+        <div
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-in-out-quint"
+          className="w-full max-w-sm"
+        >
           <label htmlFor="wish" className="mb-1 block text-sm font-medium text-gray-700">
             Your Best Whises
           </label>
@@ -111,7 +121,7 @@ const BestWhises = () => {
         <div
           data-sal="slide-up"
           data-sal-duration="2000"
-          data-sal-easing="ease-out-back"
+          data-sal-easing="ease-in-out-quint"
           className="mt-4 w-full max-w-sm"
         >
           <button
@@ -131,7 +141,7 @@ const BestWhises = () => {
             <div
               data-sal="slide-up"
               data-sal-duration="2000"
-              data-sal-easing="ease-out-back"
+              data-sal-easing="ease-in-out-quint"
               key={index}
               className="rounded p-4"
             >

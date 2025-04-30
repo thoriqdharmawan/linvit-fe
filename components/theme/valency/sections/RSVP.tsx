@@ -68,7 +68,7 @@ const RSVP = () => {
     <div
       data-sal="slide-up"
       data-sal-duration="2000"
-      data-sal-easing="ease-out-back"
+      data-sal-easing="ease-in-out-quint"
       className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12"
     >
       <div className="text-center">
