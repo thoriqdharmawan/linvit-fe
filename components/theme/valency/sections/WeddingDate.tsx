@@ -1,19 +1,12 @@
+import dynamic from "next/dynamic"
 import Image from "next/image"
-import { useCountdown } from "@/hooks/useCountdown"
 import { Wedding } from "@/interfaces"
 
-const DateItem = ({ amount, label }: { amount: number; label: string }) => {
-  return (
-    <div className="flex flex-col gap-1">
-      <h4 className="castoro-regular text-3xl font-thin text-primary">{amount}</h4>
-      <p className="castoro-regular text-lg text-gray-500">{label}</p>
-    </div>
-  )
-}
+const Countdown = dynamic(() => import("@/components/theme/valency/sections/CountDown"), {
+  ssr: false,
+})
 
 export default function WeddingDate({ data }: { data: Wedding }) {
-  const { days, hours, minutes, seconds } = useCountdown(new Date("2025-05-12T12:00:00"))
-
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-5 py-24 text-center">
       <div className="rounded-t-full bg-[#fef0e1d7] bg-opacity-20 shadow-2xl">
@@ -24,18 +17,31 @@ export default function WeddingDate({ data }: { data: Wedding }) {
             width={200}
             alt="date"
             className="mb-8 rounded-[92px] border-8 border-[#f7ede2] shadow-2xl"
+            data-sal="slide-up"
+            data-sal-duration="2000"
+            data-sal-easing="ease-in-out-quint"
           />
 
-          <h2 className="pinyon-script-regular mb-8 text-5xl font-semibold text-primary">Our Journey</h2>
+          <h2
+            data-sal="slide-up"
+            data-sal-duration="2000"
+            data-sal-easing="ease-in-out-quint"
+            className="pinyon-script-regular mb-8 text-5xl font-semibold text-primary"
+          >
+            Our Journey
+          </h2>
 
-          <p className="castoro-regular mb-8 leading-8 text-body text-gray-500">{data.our_journey}</p>
+          <p
+            data-sal="slide-up"
+            data-sal-duration="2000"
+            data-sal-delay="300"
+            data-sal-easing="ease-in-out-quint"
+            className="castoro-regular mb-8 leading-8 text-body text-gray-500"
+          >
+            {data.our_journey}
+          </p>
 
-          <div className="grid grid-cols-2 gap-12">
-            <DateItem amount={days} label="Days" />
-            <DateItem amount={hours} label="Hours" />
-            <DateItem amount={minutes} label="Minutes" />
-            <DateItem amount={seconds} label="Seconds" />
-          </div>
+          <Countdown date="2025-05-12T12:00:00" />
         </div>
 
         <Image
@@ -44,6 +50,10 @@ export default function WeddingDate({ data }: { data: Wedding }) {
           width={420}
           alt="btm-img"
           className="w-full"
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-delay="200"
+          data-sal-easing="ease-in-out-quint"
         />
       </div>
 

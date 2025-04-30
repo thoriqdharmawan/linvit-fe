@@ -5,6 +5,7 @@ import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
 import Footer from "@/components/theme/valency/sections/Footer"
 import SharingMemoriesAndCheckin from "@/components/theme/valency/sections/SharingMemoriesAndCheckin"
 import ThankYou from "@/components/theme/valency/sections/ThankYou"
+import WeddingDate from "@/components/theme/valency/sections/WeddingDate"
 import { useWeddingContext } from "@/providers/WeddingProvider"
 import GiftAndStreaming from "./sections/GiftAndStreaming"
 import GroomBridge from "./sections/GroomBride"
@@ -15,10 +16,6 @@ import RSVP from "./sections/RSVP"
 import VideoOpening from "./sections/VideoOpening"
 import WeddingEvent from "./sections/WeddingEvent"
 import "./styles/index.css"
-
-const WeddingDate = dynamic(() => import("./sections/WeddingDate"), {
-  ssr: false,
-})
 
 export default function Valency() {
   const { data } = useWeddingContext()
