@@ -1,7 +1,11 @@
 import { ReactNode, useState } from "react"
+import QRCode from "react-qr-code"
 import Dialog from "@/components/common/Dialog"
+import ArrowDownIcon from "@/components/icons/ArrowDownIcon"
 import ImagesIcon from "@/components/icons/ImagesIcon"
 import QrcodeIcon from "@/components/icons/QrcodeIcon"
+import { Wedding } from "@/interfaces"
+import { formatDate } from "@/utils"
 
 interface CardProps {
   title: string
@@ -35,7 +39,7 @@ const Card = ({ title, desc, label, icon, onClick }: CardProps) => {
   )
 }
 
-export default function SharingMemoriesAndCheckin() {
+export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
   const [isDialogOpen, setDialogOpen] = useState(false)
 
   return (
@@ -55,8 +59,46 @@ export default function SharingMemoriesAndCheckin() {
         onClick={() => setDialogOpen(true)}
       />
 
-      <Dialog isOpen={isDialogOpen} onClose={() => setDialogOpen(false)} title="Contoh Dialog">
-        <p>Ini adalah isi dialog. Kamu bisa menambahkan form atau informasi di sini.</p>
+      <Dialog isOpen={isDialogOpen} onClose={() => setDialogOpen(false)}>
+        <div className="px-3 py-8">
+          <h2 className="castoro-regular mb-4 text-xl font-semibold text-primary">QR CHECK-IN</h2>
+          <p className="mb-4 text-sm leading-8 text-gray-500">
+            Show the QR code for checking in to the location for the officer to scan it because the data is integrated
+            with the digital guestbook system.
+          </p>
+
+          <div className="mb-2 rounded-lg bg-[#fef0e1d7] px-4 py-8">
+            <h3 className="castoro-regular mb-2 text-lg font-medium text-primary">THE WEDDING OF</h3>
+            <div className="mb-8 text-sm text-gray-500">
+              <p className="pinyon-script-regular text-5xl font-semibold text-primary">
+                {data.bride_nickname} & {data.groom_nickname}
+              </p>
+              <p
+                className="castoro-regular m-0"
+                dangerouslySetInnerHTML={{ __html: formatDate(data.wedding_date) }}
+              ></p>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <div className="bg-white p-3">
+                <QRCode value="Hello, World!" />
+              </div>
+            </div>
+
+            <p className="castoro-regular mt-4 text-gray-500">Thoriq Dharmawan</p>
+          </div>
+
+          <p className="mb-2 text-sm leading-8 text-gray-500">
+            Scan the QR code above to check in at the event location.
+          </p>
+
+          <div className="flex w-full justify-center">
+            <button className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white">
+              <ArrowDownIcon />
+              <p className="text-sm leading-3">Download E-Invitation</p>
+            </button>
+          </div>
+        </div>
       </Dialog>
     </div>
   )

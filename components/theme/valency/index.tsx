@@ -38,7 +38,7 @@ export default function Valency() {
             <RSVP />
             <OurLoveStory />
             <PhotoHightlight src={data.photo_highlight_two} />
-            <SharingMemoriesAndCheckin />
+            <SharingMemoriesAndCheckin data={data} />
           </div>
         )}
 
