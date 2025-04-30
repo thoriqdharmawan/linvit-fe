@@ -1,5 +1,8 @@
 "use client"
 
+import ChevronLeftIcon from "@/components/icons/ChevronLeftIcon"
+import ChevronRightIcon from "@/components/icons/ChevronRightIcon"
+
 type PaginationProps = {
   currentPage: number
   totalPages: number
@@ -32,7 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         disabled={currentPage === 1}
         className="rounded-md px-2 py-1 text-gray-700 hover:bg-gray-300 disabled:opacity-50"
       >
-        Previous
+        <ChevronLeftIcon />
       </button>
 
       {getPageNumbers().map((page, idx) => (
@@ -53,7 +56,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         disabled={currentPage === totalPages}
         className="rounded-md px-2 py-1 text-gray-700 hover:bg-gray-300 disabled:opacity-50"
       >
-        Next
+        <ChevronRightIcon />
       </button>
     </div>
   )

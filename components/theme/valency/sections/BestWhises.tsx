@@ -9,7 +9,7 @@ const BestWhises = () => {
   const [success, setSuccess] = useState(false)
 
   const [page, setPage] = useState(1)
-  const totalPages = 20
+  const totalPages = 3
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setError("")
