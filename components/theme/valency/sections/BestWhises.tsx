@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Pagination from "@/components/common/Pagination"
 import PaperPlaneIcon from "@/components/icons/PaperPlane"
 
 const BestWhises = () => {
@@ -6,6 +7,9 @@ const BestWhises = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
   const [success, setSuccess] = useState(false)
+
+  const [page, setPage] = useState(1)
+  const totalPages = 20
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setError("")
@@ -115,6 +119,8 @@ const BestWhises = () => {
           </button>
         </div>
       </form>
+
+      <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
     </div>
   )
 }
