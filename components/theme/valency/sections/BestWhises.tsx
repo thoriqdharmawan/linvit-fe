@@ -55,13 +55,8 @@ const BestWhises = () => {
   }
 
   return (
-    <div
-      data-sal="slide-up"
-      data-sal-duration="2000"
-      data-sal-easing="ease-out-back"
-      className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12"
-    >
-      <div className="text-center">
+    <div className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12">
+      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="text-center">
         <h2 className="mb-4 text-2xl font-bold text-primary">BEST WHISES</h2>
         <p className="text-sm leading-8 text-gray-500">
           We are so grateful to have you in our lives. Your presence at our wedding is the greatest gift of all. Thank
@@ -70,7 +65,12 @@ const BestWhises = () => {
       </div>
 
       {success && (
-        <div className="text-center text-green-600">
+        <div
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-out-back"
+          className="text-center text-green-600"
+        >
           <p>Thank you for your wish!</p>
         </div>
       )}
@@ -78,7 +78,7 @@ const BestWhises = () => {
       <form className="flex flex-col items-center gap-4" onSubmit={handleSubmit}>
         {error && <p className="text-sm text-red-500">{error}</p>}
 
-        <div className="w-full max-w-sm">
+        <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="w-full max-w-sm">
           <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-700">
             Name
           </label>
@@ -93,7 +93,7 @@ const BestWhises = () => {
           />
         </div>
 
-        <div className="w-full max-w-sm">
+        <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="w-full max-w-sm">
           <label htmlFor="wish" className="mb-1 block text-sm font-medium text-gray-700">
             Your Best Whises
           </label>
@@ -108,7 +108,12 @@ const BestWhises = () => {
           />
         </div>
 
-        <div className="mt-4 w-full max-w-sm">
+        <div
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-out-back"
+          className="mt-4 w-full max-w-sm"
+        >
           <button
             type="submit"
             disabled={isLoading}
@@ -123,7 +128,13 @@ const BestWhises = () => {
       <div>
         <div className="flex flex-col gap-1">
           {Array.from({ length: 5 }, (_, index) => (
-            <div key={index} className="rounded p-4">
+            <div
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-easing="ease-out-back"
+              key={index}
+              className="rounded p-4"
+            >
               <p className="mb-3 text-lg font-semibold text-primary">John Doe</p>
               <p className="text-sm leading-7 text-gray-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
