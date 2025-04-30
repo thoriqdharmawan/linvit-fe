@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic"
 import Image from "next/image"
 import BestWhises from "@/components/theme/valency/sections/BestWhises"
 import DekstopImage from "@/components/theme/valency/sections/DekstopImage"
