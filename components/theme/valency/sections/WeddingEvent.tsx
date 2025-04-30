@@ -18,12 +18,7 @@ const Card = (props: Props) => {
   const { title, address, date, lat, lng, location_name, times } = props
 
   return (
-    <div
-      data-sal="slide-up"
-      data-sal-duration="2000"
-      data-sal-easing="ease-out-back"
-      className="relative flex flex-col items-center justify-center overflow-clip rounded-3xl border-4 bg-[#fef0e1d7] shadow-2xl"
-    >
+    <div className="relative flex flex-col items-center justify-center overflow-clip rounded-3xl border-4 bg-[#fef0e1d7] shadow-2xl">
       <Image
         src="https://zivora.s3.ap-southeast-2.amazonaws.com/themes/golden-serenade/section.webp"
         height={320}
@@ -33,27 +28,65 @@ const Card = (props: Props) => {
       />
 
       <div className="px-6 py-12">
-        <h2 className="pinyon-script-regular mb-6 text-5xl font-semibold text-primary">{title}</h2>
+        <h2
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-in-out-quint"
+          className="pinyon-script-regular mb-6 text-5xl font-semibold text-primary"
+        >
+          {title}
+        </h2>
 
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
-            <h3 className="castoro-regular text-lg capitalize text-body">{getDay(date)}</h3>
+            <h3
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-easing="ease-in-out-quint"
+              className="castoro-regular text-lg capitalize text-body"
+            >
+              {getDay(date)}
+            </h3>
             <p
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-easing="ease-in-out-quint"
               className="castoro-regular text-lg text-gray-500"
               dangerouslySetInnerHTML={{ __html: formatDate(date) }}
             />
-            <p className="castoro-regular text-lg text-gray-500">{times}</p>
+            <p
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-easing="ease-in-out-quint"
+              className="castoro-regular text-lg text-gray-500"
+            >
+              {times}
+            </p>
           </div>
 
-          <div className="flex items-center justify-center gap-4">
+          <div
+            data-sal="slide-up"
+            data-sal-duration="2000"
+            data-sal-easing="ease-in-out-quint"
+            className="flex items-center justify-center gap-4"
+          >
             <div className="w-14 border-t border-body" />
             <BuildingIcon />
             <div className="w-14 border-t border-body" />
           </div>
 
           <div className="castoro-regular flex flex-col gap-4">
-            <h3 className="leading-6">{location_name}</h3>
-            <p className="text-sm leading-8 text-gray-500">{address}</p>
+            <h3 data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-in-out-quint" className="leading-6">
+              {location_name}
+            </h3>
+            <p
+              data-sal="slide-up"
+              data-sal-duration="2000"
+              data-sal-easing="ease-in-out-quint"
+              className="text-sm leading-8 text-gray-500"
+            >
+              {address}
+            </p>
           </div>
 
           <a
@@ -61,6 +94,10 @@ const Card = (props: Props) => {
             target="_blank"
             rel="noopener noreferrer"
             className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white"
+            data-sal="slide-up"
+            data-sal-duration="2000"
+            data-sal-delay="500"
+            data-sal-easing="ease-in-out-quint"
           >
             <LocationIcon />
 
@@ -74,6 +111,10 @@ const Card = (props: Props) => {
         height={320}
         width={420}
         alt="btm-img"
+        data-sal="slide-up"
+        data-sal-duration="2000"
+        data-sal-delay="300"
+        data-sal-easing="ease-in-out-quint"
       />
     </div>
   )
@@ -82,10 +123,22 @@ const Card = (props: Props) => {
 export default function WeddingEvent({ data }: { data: Wedding }) {
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-4 py-20 text-center">
-      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-out-back" className="mb-8">
-        <h1 className="castoro-regular mb-6 text-3xl font-semibold text-primary">WEDDING EVENT</h1>
+      <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-in-out-quint" className="mb-8">
+        <h1
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-in-out-quint"
+          className="castoro-regular mb-6 text-3xl font-semibold text-primary"
+        >
+          WEDDING EVENT
+        </h1>
 
-        <p className="castoro-regular text-sm leading-8 text-gray-500">
+        <p
+          data-sal="slide-up"
+          data-sal-duration="2000"
+          data-sal-easing="ease-in-out-quint"
+          className="castoro-regular text-sm leading-8 text-gray-500"
+        >
           By the grace of God, we are pleased to announce our wedding to you, our family, and our friends. We request
           the honor of your presence on our special day that will be held on:
         </p>
