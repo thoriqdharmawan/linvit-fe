@@ -52,7 +52,7 @@ export default function Valency() {
     }
   }
 
-  const isFullscreen = fullscreen && document.fullscreenElement !== null
+  const isFullscreen = fullscreen && document?.fullscreenElement !== null
 
   return (
     <div data-sal="slide-up" className="flex h-dvh">

@@ -12,19 +12,19 @@ const Cover = (props: Props) => {
 
   const requestFullscreen = useCallback(() => {
     try {
-      const docEl = document.documentElement
+      const docEl = document.documentElement as HTMLElement
 
       if (docEl.requestFullscreen) {
         docEl.requestFullscreen()
-      } else if ((docEl as any).mozRequestFullScreen) {
+      } else if (docEl.mozRequestFullScreen) {
         /* Firefox */
-        ;(docEl as any).mozRequestFullScreen()
-      } else if ((docEl as any).webkitRequestFullscreen) {
+        docEl.mozRequestFullScreen()
+      } else if (docEl.webkitRequestFullscreen) {
         /* Chrome, Safari & Opera */
-        ;(docEl as any).webkitRequestFullscreen()
-      } else if ((docEl as any).msRequestFullscreen) {
+        docEl.webkitRequestFullscreen()
+      } else if (docEl.msRequestFullscreen) {
         /* IE/Edge */
-        ;(docEl as any).msRequestFullscreen()
+        docEl.msRequestFullscreen()
       }
     } catch (error) {
       console.error("Fullscreen request failed:", error)
