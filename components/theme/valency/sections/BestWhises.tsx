@@ -78,7 +78,7 @@ const BestWhises = () => {
       <form className="flex flex-col items-center gap-4" onSubmit={handleSubmit}>
         {error && <p className="text-sm text-red-500">{error}</p>}
 
-        <div className="w-full max-w-xs">
+        <div className="w-full max-w-sm">
           <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-700">
             Name
           </label>
@@ -93,7 +93,7 @@ const BestWhises = () => {
           />
         </div>
 
-        <div className="w-full max-w-xs">
+        <div className="w-full max-w-sm">
           <label htmlFor="wish" className="mb-1 block text-sm font-medium text-gray-700">
             Your Best Whises
           </label>
@@ -108,7 +108,7 @@ const BestWhises = () => {
           />
         </div>
 
-        <div className="mt-4 w-full max-w-xs">
+        <div className="mt-4 w-full max-w-sm">
           <button
             type="submit"
             disabled={isLoading}
@@ -119,6 +119,22 @@ const BestWhises = () => {
           </button>
         </div>
       </form>
+
+      <div>
+        <div className="flex flex-col gap-1">
+          {Array.from({ length: 5 }, (_, index) => (
+            <div key={index} className="rounded p-4">
+              <p className="mb-3 text-lg font-semibold text-primary">John Doe</p>
+              <p className="text-sm leading-7 text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
     </div>
