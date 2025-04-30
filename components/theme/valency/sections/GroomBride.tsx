@@ -12,19 +12,40 @@ const Couple = (props: Photo) => {
   const { name, nickname, src, parent } = props
 
   return (
-    <div
-      data-sal="slide-up"
-      data-sal-duration="2000"
-      data-sal-easing="ease-out-back"
-      className="flex flex-col items-center justify-center"
-    >
-      <div className="relative mb-8 flex h-80 w-60 overflow-hidden rounded-full border-8 border-[#fff8f2] shadow-2xl">
+    <div className="flex flex-col items-center justify-center">
+      <div
+        data-sal="slide-up"
+        data-sal-duration="2000"
+        data-sal-easing="ease-out-back"
+        className="relative mb-8 flex h-80 w-60 overflow-hidden rounded-full border-8 border-[#fff8f2] shadow-2xl"
+      >
         <Image fill src={src} alt={name} className="object-cover" />
       </div>
 
-      <h2 className="pinyon-script-regular mb-6 text-5xl font-semibold text-primary">{nickname}</h2>
-      <h2 className="castoro-regular mb-2 text-xl text-gray-500">{name}</h2>
-      <p className="castoro-regular text-gray-500">{parent}</p>
+      <h2
+        data-sal="slide-up"
+        data-sal-duration="2000"
+        data-sal-easing="ease-out-back"
+        className="pinyon-script-regular mb-6 text-5xl font-semibold text-primary"
+      >
+        {nickname}
+      </h2>
+      <h2
+        data-sal="slide-up"
+        data-sal-duration="2000"
+        data-sal-easing="ease-out-back"
+        className="castoro-regular mb-2 text-xl text-gray-500"
+      >
+        {name}
+      </h2>
+      <p
+        data-sal="slide-up"
+        data-sal-duration="2000"
+        data-sal-easing="ease-out-back"
+        className="castoro-regular text-gray-500"
+      >
+        {parent}
+      </p>
     </div>
   )
 }
