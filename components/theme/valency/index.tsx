@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo, useCallback } from "react"
 import Image from "next/image"
 import ExitFullscreenIcon from "@/components/icons/ExitFullscreenIcon"
 import PauseIcon from "@/components/icons/PauseIcon"
@@ -38,7 +38,29 @@ export default function Valency() {
     }
   }, [invitationOpened])
 
+  const requestFullscreen = useCallback(() => {
+    try {
+      const docEl = document.documentElement as HTMLElement
+
+      if (docEl.requestFullscreen) {
+        docEl.requestFullscreen()
+      } else if (docEl.mozRequestFullScreen) {
+        /* Firefox */
+        docEl.mozRequestFullScreen()
+      } else if (docEl.webkitRequestFullscreen) {
+        /* Chrome, Safari & Opera */
+        docEl.webkitRequestFullscreen()
+      } else if (docEl.msRequestFullscreen) {
+        /* IE/Edge */
+        docEl.msRequestFullscreen()
+      }
+    } catch (error) {
+      console.error("Fullscreen request failed:", error)
+    }
+  }, [])
+
   const handleOpenInvitation = () => {
+    requestFullscreen()
     setIsAnimating(true)
     setTimeout(() => {
       setInvitationOpened(true)
@@ -52,7 +74,12 @@ export default function Valency() {
     }
   }
 
-  const isFullscreen = fullscreen && document?.fullscreenElement !== null
+  const isFullscreen = useCallback(() => {
+    if (typeof window !== "undefined") {
+      return fullscreen && !!document.fullscreenElement
+    }
+    return false
+  }, [fullscreen])
 
   return (
     <div data-sal="slide-up" className="flex h-dvh">
@@ -61,7 +88,7 @@ export default function Valency() {
       </div>
 
       <div className="relative h-dvh w-full xs:max-w-[430px]">
-        {isFullscreen && (
+        {isFullscreen() && (
           <button
             onClick={handleExitFullscreen}
             className="fixed bottom-6 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur transition-all hover:scale-110 active:scale-95"
