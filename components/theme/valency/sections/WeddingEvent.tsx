@@ -93,7 +93,7 @@ const Card = (props: Props) => {
             href={`https://www.google.com/maps?q=${lat},${lng}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white"
+            className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-linear-to-r from-secondary to-primary p-3 text-sm text-white"
             data-sal="slide-up"
             data-sal-duration="2000"
             data-sal-delay="500"

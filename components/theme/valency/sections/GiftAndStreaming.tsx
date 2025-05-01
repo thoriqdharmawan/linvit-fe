@@ -21,7 +21,7 @@ const Card = ({ title, desc, label, icon }: CardProps) => {
       <p className="castoro-regular text-sm leading-8 text-body text-gray-500">{desc}</p>
 
       <div className="mt-4 flex items-center justify-center">
-        <button className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white">
+        <button className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-linear-to-r from-secondary to-primary p-3 text-sm text-white">
           {icon}
 
           <p className="text-sm">{label}</p>

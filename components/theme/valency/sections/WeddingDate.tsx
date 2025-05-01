@@ -74,7 +74,7 @@ export default function WeddingDate({ data }: { data: Wedding }) {
               href={createGoogleCalendarUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white"
+              className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white"
             >
               <DateIcon />
               <p className="text-sm">SAVE THE DATE</p>

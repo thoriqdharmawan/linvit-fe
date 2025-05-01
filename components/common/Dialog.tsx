@@ -29,7 +29,7 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, title, children }) => 
   if (!show) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black/70">
       <div
         className={`relative w-full max-w-lg rounded-lg bg-white p-6 shadow-xl ${
           closing ? "animate-slide-down" : "animate-slide-up"
@@ -37,7 +37,7 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, title, children }) => 
       >
         {title && <h2 className="mb-4 text-xl font-semibold">{title}</h2>}
 
-        <div className="absolute right-2 top-2 cursor-pointer" onClick={onClose}>
+        <div className="absolute top-2 right-2 cursor-pointer" onClick={onClose}>
           <CloseIcon />
         </div>
         <div>{children}</div>

@@ -57,7 +57,7 @@ const BestWhises = () => {
   return (
     <div className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12">
       <div data-sal="slide-up" data-sal-duration="2000" data-sal-easing="ease-in-out-quint" className="text-center">
-        <h2 className="mb-4 text-2xl font-bold text-primary">BEST WHISES</h2>
+        <h2 className="text-primary mb-4 text-2xl font-bold">BEST WHISES</h2>
         <p className="text-sm leading-8 text-gray-500">
           We are so grateful to have you in our lives. Your presence at our wedding is the greatest gift of all. Thank
           you for being a part of our special day!
@@ -94,7 +94,7 @@ const BestWhises = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Input Name"
-            className="w-full rounded border p-2 text-sm"
+            className="w-full rounded-sm border bg-white p-2 text-sm"
           />
         </div>
 
@@ -114,7 +114,7 @@ const BestWhises = () => {
             onChange={handleChange}
             placeholder="Input Whises"
             rows={4}
-            className="w-full rounded border p-2 text-sm"
+            className="w-full rounded-sm border bg-white p-2 text-sm"
           />
         </div>
 
@@ -127,7 +127,7 @@ const BestWhises = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="castoro-regular flex w-full items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white disabled:opacity-70"
+            className="castoro-regular from-secondary to-primary flex w-full items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r p-3 text-sm text-white disabled:opacity-70"
           >
             <PaperPlaneIcon />
             <p className="text-sm">{isLoading ? "Submitting..." : "Submit"}</p>
@@ -143,9 +143,9 @@ const BestWhises = () => {
               data-sal-duration="2000"
               data-sal-easing="ease-in-out-quint"
               key={index}
-              className="rounded p-4"
+              className="rounded-sm p-4"
             >
-              <p className="mb-3 text-lg font-semibold text-primary">John Doe</p>
+              <p className="text-primary mb-3 text-lg font-semibold">John Doe</p>
               <p className="text-sm leading-7 text-gray-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

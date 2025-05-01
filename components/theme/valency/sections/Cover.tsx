@@ -11,7 +11,7 @@ const Cover = (props: Props) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 px-4 backdrop-blur-sm transition-transform duration-500 ease-in-out ${isAnimating ? "-translate-y-full" : "translate-y-0"}`}
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/70 px-4 backdrop-blur-xs transition-transform duration-500 ease-in-out ${isAnimating ? "-translate-y-full" : "translate-y-0"}`}
     >
       <div className="mb-24 text-center">
         <h1 className="text-md castoro-regular mb-2 font-serif text-white">THE WEDDING OF</h1>
@@ -28,7 +28,7 @@ const Cover = (props: Props) => {
         </div>
         <button
           onClick={onOpenInvitation}
-          className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white"
+          className="castoro-regular from-secondary to-primary flex items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r fill-white p-3 px-8 text-sm text-white"
         >
           Buka Undangan
         </button>

@@ -58,7 +58,7 @@ export default function Valency() {
         {isFullscreen && (
           <button
             onClick={exitFullscreen}
-            className="fixed bottom-6 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur transition-all hover:scale-110 active:scale-95"
+            className="fixed bottom-6 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
           >
             <ExitFullscreenIcon />
           </button>
@@ -67,7 +67,7 @@ export default function Valency() {
         {invitationOpened && (
           <button
             onClick={isPlaying ? pause : play}
-            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur transition-all hover:scale-110 active:scale-95"
+            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
             aria-label={isPlaying ? "Pause music" : "Play music"}
           >
             {isPlaying ? <PauseIcon /> : <PlayIcon />}

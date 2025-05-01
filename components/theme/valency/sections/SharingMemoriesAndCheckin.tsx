@@ -24,12 +24,12 @@ const Card = ({ title, desc, label, icon, onClick }: CardProps) => {
       data-sal-easing="ease-in-out-quint"
       className="mb-4 rounded-xl bg-[#fef0e1d7] px-4 py-12 text-center shadow-2xl"
     >
-      <h3 className="castoro-regular mb-3 text-center text-xl font-semibold text-primary">{title}</h3>
-      <p className="castoro-regular text-sm leading-8 text-body text-gray-500">{desc}</p>
+      <h3 className="castoro-regular text-primary mb-3 text-center text-xl font-semibold">{title}</h3>
+      <p className="castoro-regular text-sm leading-8 text-gray-500">{desc}</p>
 
       {onClick && (
         <div onClick={onClick} className="mt-4 flex items-center justify-center">
-          <button className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white">
+          <button className="castoro-regular from-secondary to-primary flex items-center justify-center gap-2 rounded-full border-0 bg-linear-to-r p-3 text-sm text-white">
             {icon}
 
             <p className="text-sm">{label}</p>
@@ -63,7 +63,7 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
 
       <Dialog isOpen={isDialogOpen} onClose={() => setDialogOpen(false)}>
         <div ref={elementRef} className="bg-white pt-8 text-center">
-          <h2 className="castoro-regular mb-4 text-xl font-semibold text-primary">QR CHECK-IN</h2>
+          <h2 className="castoro-regular text-primary mb-4 text-xl font-semibold">QR CHECK-IN</h2>
           <p className="castoro-regular mb-4 text-sm leading-8 text-gray-500">
             Show the QR code for checking in to the location for the officer to scan it because the data is integrated
             with the digital guestbook system.
@@ -71,9 +71,9 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
 
           <div className="mb-2 rounded-lg bg-[#fef0e1d7]">
             <div className="px-4 py-6">
-              <h3 className="castoro-regular mb-2 text-lg font-medium text-primary">THE WEDDING OF</h3>
+              <h3 className="castoro-regular text-primary mb-2 text-lg font-medium">THE WEDDING OF</h3>
               <div className="mb-8 text-sm text-gray-500">
-                <p className="pinyon-script-regular text-5xl font-semibold text-primary">
+                <p className="pinyon-script-regular text-primary text-5xl font-semibold">
                   {data.bride_nickname} & {data.groom_nickname}
                 </p>
                 <p
@@ -102,7 +102,7 @@ export default function SharingMemoriesAndCheckin({ data }: { data: Wedding }) {
         <div className="flex w-full justify-center pb-8">
           <button
             onClick={() => downloadImage("qr-check-in.png")}
-            className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white"
+            className="castoro-regular from-secondary to-primary flex items-center justify-center gap-2 rounded-full border-0 bg-linear-to-r p-3 text-sm text-white"
           >
             <ArrowDownIcon />
             <p className="text-sm leading-3">Download E-Invitation</p>

@@ -72,7 +72,7 @@ const RSVP = () => {
       className="castoro-regular flex flex-col gap-12 bg-[#fef0e1] px-5 py-12"
     >
       <div className="text-center">
-        <h2 className="mb-4 text-2xl font-bold text-primary">RSVP</h2>
+        <h2 className="text-primary mb-4 text-2xl font-bold">RSVP</h2>
         <p className="text-sm leading-8 text-gray-500">
           Please help us prepare everything better by confirming your attendance at our wedding event with the following
           RSVP form:
@@ -94,7 +94,7 @@ const RSVP = () => {
             id="name"
             type="text"
             placeholder="Input Name"
-            className="w-full rounded border p-2 text-sm"
+            className="w-full rounded-sm border bg-white p-2 text-sm"
             value={formData.name}
             onChange={handleChange}
           />
@@ -108,7 +108,7 @@ const RSVP = () => {
             id="address"
             type="text"
             placeholder="Input Address"
-            className="w-full rounded border p-2 text-sm"
+            className="w-full rounded-sm border bg-white p-2 text-sm"
             value={formData.address}
             onChange={handleChange}
           />
@@ -120,7 +120,7 @@ const RSVP = () => {
           </label>
           <select
             id="attendance"
-            className="w-full rounded border p-2 text-sm"
+            className="w-full rounded-sm border bg-white p-2 text-sm"
             value={formData.attendance}
             onChange={handleChange}
           >
@@ -135,7 +135,7 @@ const RSVP = () => {
           </label>
           <select
             id="guests"
-            className="w-full rounded border p-2 text-sm"
+            className="w-full rounded-sm border bg-white p-2 text-sm"
             value={formData.guests}
             onChange={handleChange}
             disabled={formData.attendance === "no"}
@@ -153,7 +153,7 @@ const RSVP = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="castoro-regular flex w-full items-center justify-center gap-4 rounded-full border-0 bg-gradient-to-r from-secondary to-primary p-3 text-sm text-white disabled:opacity-70"
+            className="castoro-regular from-secondary to-primary flex w-full items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r p-3 text-sm text-white disabled:opacity-70"
           >
             <PaperPlaneIcon />
             <p className="text-sm">{isSubmitting ? "Submitting..." : "Submit"}</p>
