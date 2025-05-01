@@ -11,6 +11,7 @@ import SharingMemoriesAndCheckin from "@/components/theme/valency/sections/Shari
 import ThankYou from "@/components/theme/valency/sections/ThankYou"
 import WeddingDate from "@/components/theme/valency/sections/WeddingDate"
 import { useAudio } from "@/hooks/useAudio"
+import useFullscreen from "@/hooks/useFullscreen"
 import { useWeddingContext } from "@/providers/WeddingProvider"
 import GiftAndStreaming from "./sections/GiftAndStreaming"
 import GroomBridge from "./sections/GroomBride"
@@ -28,7 +29,8 @@ export default function Valency() {
   const { data } = useWeddingContext()
   const { play, pause, isPlaying } = useAudio(audioUrl)
 
-  const [fullscreen, setFullscreen] = useState(true)
+  const { isFullscreen, enterFullscreen, exitFullscreen } = useFullscreen()
+
   const [invitationOpened, setInvitationOpened] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
 
@@ -38,48 +40,13 @@ export default function Valency() {
     }
   }, [invitationOpened])
 
-  const requestFullscreen = useCallback(() => {
-    try {
-      const docEl = document.documentElement as HTMLElement
-
-      if (docEl.requestFullscreen) {
-        docEl.requestFullscreen()
-      } else if (docEl.mozRequestFullScreen) {
-        /* Firefox */
-        docEl.mozRequestFullScreen()
-      } else if (docEl.webkitRequestFullscreen) {
-        /* Chrome, Safari & Opera */
-        docEl.webkitRequestFullscreen()
-      } else if (docEl.msRequestFullscreen) {
-        /* IE/Edge */
-        docEl.msRequestFullscreen()
-      }
-    } catch (error) {
-      console.error("Fullscreen request failed:", error)
-    }
-  }, [])
-
   const handleOpenInvitation = () => {
-    requestFullscreen()
+    enterFullscreen()
     setIsAnimating(true)
     setTimeout(() => {
       setInvitationOpened(true)
     }, 200)
   }
-
-  const handleExitFullscreen = () => {
-    if (document.fullscreenElement) {
-      document.exitFullscreen()
-      setFullscreen(false)
-    }
-  }
-
-  const isFullscreen = useCallback(() => {
-    if (typeof window !== "undefined") {
-      return fullscreen && !!document.fullscreenElement
-    }
-    return false
-  }, [fullscreen])
 
   return (
     <div data-sal="slide-up" className="flex h-dvh">
@@ -88,9 +55,9 @@ export default function Valency() {
       </div>
 
       <div className="relative h-dvh w-full xs:max-w-[430px]">
-        {isFullscreen() && (
+        {isFullscreen && (
           <button
-            onClick={handleExitFullscreen}
+            onClick={exitFullscreen}
             className="fixed bottom-6 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur transition-all hover:scale-110 active:scale-95"
           >
             <ExitFullscreenIcon />
