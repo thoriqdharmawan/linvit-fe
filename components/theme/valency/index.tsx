@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import ExitFullscreenIcon from "@/components/icons/ExitFullscreenIcon"
 import PauseIcon from "@/components/icons/PauseIcon"
@@ -50,15 +50,15 @@ export default function Valency() {
 
   return (
     <div data-sal="slide-up" className="flex h-dvh">
-      <div className="relative hidden w-full xs:block">
+      <div className="xs:block relative hidden w-full">
         <DekstopImage />
       </div>
 
-      <div className="relative h-dvh w-full xs:max-w-[430px]">
+      <div className="xs:max-w-[430px] relative h-dvh w-full">
         {isFullscreen && (
           <button
             onClick={exitFullscreen}
-            className="fixed bottom-6 right-20 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
+            className="fixed right-20 bottom-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
           >
             <ExitFullscreenIcon />
           </button>
@@ -67,7 +67,7 @@ export default function Valency() {
         {invitationOpened && (
           <button
             onClick={isPlaying ? pause : play}
-            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
+            className="fixed right-6 bottom-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
             aria-label={isPlaying ? "Pause music" : "Play music"}
           >
             {isPlaying ? <PauseIcon /> : <PlayIcon />}
