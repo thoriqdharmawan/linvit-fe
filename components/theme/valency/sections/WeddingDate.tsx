@@ -30,8 +30,8 @@ export default function WeddingDate({ data }: { data: Wedding }) {
 
   return (
     <div className="relative flex flex-col gap-4 overflow-clip px-5 py-24 text-center">
-      <div className="rounded-t-full bg-[#fef0e1d7] bg-opacity-20 shadow-2xl">
-        <div className="flex flex-col items-center px-7 pb-2 pt-9">
+      <div className="bg-opacity-20 rounded-t-full bg-[#fef0e1d7] shadow-2xl">
+        <div className="flex flex-col items-center px-7 pt-9 pb-2">
           <Image
             src="https://picsum.photos/id/255/200/300"
             height={300}
@@ -47,7 +47,7 @@ export default function WeddingDate({ data }: { data: Wedding }) {
             data-sal="slide-up"
             data-sal-duration="2000"
             data-sal-easing="ease-in-out-quint"
-            className="pinyon-script-regular mb-8 text-5xl font-semibold text-primary"
+            className="pinyon-script-regular text-primary mb-8 text-5xl font-semibold"
           >
             Our Journey
           </h2>
@@ -57,7 +57,7 @@ export default function WeddingDate({ data }: { data: Wedding }) {
             data-sal-duration="2000"
             data-sal-delay="300"
             data-sal-easing="ease-in-out-quint"
-            className="castoro-regular mb-8 leading-8 text-body text-gray-500"
+            className="castoro-regular mb-8 leading-8 text-gray-500"
           >
             {data.our_journey}
           </p>
@@ -74,7 +74,7 @@ export default function WeddingDate({ data }: { data: Wedding }) {
               href={createGoogleCalendarUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="castoro-regular flex items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r from-secondary to-primary fill-white p-3 px-8 text-sm text-white"
+              className="castoro-regular from-secondary to-primary flex items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r fill-white p-3 px-8 text-sm text-white"
             >
               <DateIcon />
               <p className="text-sm">SAVE THE DATE</p>

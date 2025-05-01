@@ -17,11 +17,11 @@ const Card = ({ title, desc, label, icon }: CardProps) => {
       data-sal-easing="ease-in-out-quint"
       className="mb-4 rounded-xl bg-[#fef0e1d7] px-4 py-12 text-center shadow-2xl"
     >
-      <h3 className="castoro-regular mb-3 text-center text-xl font-semibold text-primary">{title}</h3>
-      <p className="castoro-regular text-sm leading-8 text-body text-gray-500">{desc}</p>
+      <h3 className="castoro-regular text-primary mb-3 text-center text-xl font-semibold">{title}</h3>
+      <p className="castoro-regular text-sm leading-8 text-gray-500">{desc}</p>
 
       <div className="mt-4 flex items-center justify-center">
-        <button className="castoro-regular flex items-center justify-center gap-2 rounded-full border-0 bg-linear-to-r from-secondary to-primary p-3 text-sm text-white">
+        <button className="castoro-regular from-secondary to-primary flex items-center justify-center gap-2 rounded-full border-0 bg-linear-to-r p-3 text-sm text-white">
           {icon}
 
           <p className="text-sm">{label}</p>
