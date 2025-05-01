@@ -28,7 +28,7 @@ const Cover = (props: Props) => {
         </div>
         <button
           onClick={onOpenInvitation}
-          className="castoro-regular from-secondary to-primary flex items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r fill-white p-3 px-8 text-sm text-white"
+          className="castoro-regular from-secondary to-primary flex cursor-pointer items-center justify-center gap-4 rounded-full border-0 bg-linear-to-r fill-white p-3 px-8 text-sm text-white"
         >
           Buka Undangan
         </button>
