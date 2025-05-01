@@ -36,8 +36,8 @@
   animation: slide-down 0.3s ease-in forwards;
 }
 
-@utility animate-fade-infinite-in {
-  animation: fade-in-infinite-in 10s ease-in-out infinite;
+@utility animate-fade-in {
+  animation: fade-in 10s ease-in-out;
 }
 
 @layer utilities {
@@ -105,7 +105,7 @@
     }
   }
 
-  @keyframes fade-in-infinite-in {
+  @keyframes fade-in {
     0% {
       opacity: 0;
     }
@@ -115,11 +115,8 @@
     60% {
       opacity: 1;
     }
-    90% {
-      opacity: 1;
-    }
     100% {
-      opacity: 0;
+      opacity: 1;
     }
   }
 }
